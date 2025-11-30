@@ -546,73 +546,51 @@ func fetchProblemDetail(titleSlug string) (ProblemDetail, error) {
 	return result.Data.Question, nil
 }
 
-// fetchSubmissionCode returns (code, lang, error)
 func fetchSubmissionCode(submissionID int) (string, string, error) {
-	query := fmt.Sprintf(`{
-		"query": "query submissionDetails($submissionId: Int!) { submissionDetails(submissionId: $submissionId) { code runtimeDisplay memoryDisplay lang } }",
-		"variables": {"submissionId": %d}
-	}`, submissionID)
+	url := fmt.Sprintf("https://leetcode.com/submissions/detail/%d/", submissionID)
 
-	req, err := http.NewRequest("POST", graphqlEndpoint, strings.NewReader(query))
+	req, err := http.NewRequest("GET", url, nil)
 	if err != nil {
 		return "", "", err
 	}
 
-	req.Header.Set("Content-Type", "application/json")
 	req.Header.Set("Cookie", fmt.Sprintf("LEETCODE_SESSION=%s; csrftoken=%s", sessionToken, csrfToken))
 	req.Header.Set("x-csrftoken", csrfToken)
 	req.Header.Set("Referer", "https://leetcode.com")
 	req.Header.Set("User-Agent", "Mozilla/5.0")
 
-	client := &http.Client{Timeout: 30 * time.Second}
+	client := &http.Client{Timeout: 15 * time.Second}
 	resp, err := client.Do(req)
 	if err != nil {
 		return "", "", err
 	}
 	defer resp.Body.Close()
 
-	fmt.Printf("   [DEBUG] GraphQL API status: %d\n", resp.StatusCode)
+	if resp.StatusCode != 200 {
+		body, _ := io.ReadAll(resp.Body)
+		return "", "", fmt.Errorf("submission page returned %d: %s", resp.StatusCode, string(body))
+	}
 
-	body, err := io.ReadAll(resp.Body)
+	html, err := io.ReadAll(resp.Body)
 	if err != nil {
 		return "", "", err
 	}
 
-	if resp.StatusCode != 200 {
-		bodyStr := string(body)
-		fmt.Printf("   [DEBUG] Response body: %s\n", bodyStr)
-		if strings.Contains(bodyStr, "Cannot query field") || strings.Contains(bodyStr, "must have a sub selection") {
-			fmt.Println("   [DEBUG] Possible GraphQL schema change detected. Please verify the submissionDetails query.")
-		}
-		return "", "", fmt.Errorf("GraphQL API returned status %d", resp.StatusCode)
+	// Extract code & language from embedded JSON (JS variable)
+	regex := regexp.MustCompile(`"submissionCode":"(.*?)","runtime":".*?","memory":".*?","lang":"(.*?)"`)
+	matches := regex.FindStringSubmatch(string(html))
+	if len(matches) < 3 {
+		return "", "", fmt.Errorf("could not extract code from submission page — likely logged out or schema change")
 	}
 
-	var result struct {
-		Data struct {
-			SubmissionDetails struct {
-				Code           string `json:"code"`
-				RuntimeDisplay string `json:"runtimeDisplay"`
-				MemoryDisplay  string `json:"memoryDisplay"`
-				Lang           string `json:"lang"`
-			} `json:"submissionDetails"`
-		} `json:"data"`
-	}
+	// Restore escaped chars like \n, \"
+	code := strings.ReplaceAll(matches[1], `\"`, `"`)
+	code = strings.ReplaceAll(code, `\\n`, "\n")
+	code = strings.ReplaceAll(code, `\\t`, "\t")
 
-	if err := json.Unmarshal(body, &result); err != nil {
-		fmt.Printf("   [DEBUG] Failed to parse response: %s\n", string(body))
-		return "", "", err
-	}
+	lang := matches[2]
 
-	code := result.Data.SubmissionDetails.Code
-	lang := result.Data.SubmissionDetails.Lang
-
-	fmt.Printf("   [DEBUG] Code length: %d chars\n", len(code))
-	if len(code) > 0 {
-		fmt.Printf("   [DEBUG] Runtime: %s, Memory: %s, Lang: %s\n",
-			result.Data.SubmissionDetails.RuntimeDisplay,
-			result.Data.SubmissionDetails.MemoryDisplay,
-			result.Data.SubmissionDetails.Lang)
-	}
+	fmt.Printf("   [DEBUG] Code extracted successfully (%d chars)\n", len(code))
 
 	return code, lang, nil
 }
