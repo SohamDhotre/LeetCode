@@ -29,17 +29,21 @@ type Config struct {
 	LanguageExtensions map[string]string `json:"language_extensions"`
 }
 
+// Shape matches /api/submissions/ JSON (we only keep fields we care about)
 type Submission struct {
 	ID            int    `json:"id"`
 	QuestionID    int    `json:"question_id"`
 	Lang          string `json:"lang"`
 	LangName      string `json:"lang_name"`
+	Time          string `json:"time"`
 	Timestamp     int64  `json:"timestamp"`
-	Status        int    `json:"status"`
-	StatusDisplay string `json:"status_display"`
-	Title         string `json:"title"`
-	TitleSlug     string `json:"title_slug"`
-	Code          string `json:"code"`
+	Status        int    `json:"status"`         // 10 = Accepted
+	StatusDisplay string `json:"status_display"` // "Accepted", "Wrong Answer", etc
+	URL           string `json:"url"`            // "/submissions/detail/xxxx/"
+	Title         string `json:"title"`          // "Reverse Nodes in k-Group"
+	TitleSlug     string `json:"title_slug"`     // "reverse-nodes-in-k-group"
+	Code          string `json:"code"`           // full solution code (this is what we want!)
+	FrontendID    int    `json:"frontend_id"`    // LeetCode frontend id
 }
 
 // Not currently used, kept for possible future
@@ -145,7 +149,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	// Validate session immediately
+	// Validate session immediately using GraphQL
 	fmt.Println("🔑 Validating session...")
 	if err := validateSession(); err != nil {
 		fmt.Printf("❌ Session validation failed: %v\n", err)
@@ -213,36 +217,14 @@ func performSync() {
 		}
 		for i := 0; i < limit; i++ {
 			sub := submissions[i]
-			statusText := "Unknown"
-			switch sub.StatusCode {
-			case 0:
-				statusText = "Accepted (Status 0) ✅"
-			case 10:
-				statusText = "Accepted (Status 10) ✅"
-			case 11:
-				statusText = "Wrong Answer ❌"
-			case 12:
-				statusText = "Memory Limit Exceeded"
-			case 13:
-				statusText = "Output Limit Exceeded"
-			case 14:
-				statusText = "Time Limit Exceeded ⏱️"
-			case 15:
-				statusText = "Runtime Error 💥"
-			case 16:
-				statusText = "Internal Error"
-			case 20:
-				statusText = "Compile Error 🔨"
-			default:
-				statusText = fmt.Sprintf("Status %d", sub.StatusCode)
-			}
+			statusText := describeStatus(sub.Status)
 			fmt.Printf("   %d. [%s] %s (ID: %d, Lang: %s)\n",
 				i+1, statusText, sub.Title, sub.ID, sub.Lang)
 		}
 		fmt.Println()
 	}
 
-	// Filter accepted submissions
+	// Filter accepted submissions (latest per problem)
 	acceptedSubmissions := filterAcceptedSubmissions(submissions)
 	fmt.Printf("   ✓ Found %d accepted submissions (after filtering)\n", len(acceptedSubmissions))
 
@@ -474,7 +456,6 @@ func fetchRecentSubmissions() ([]Submission, error) {
 		return nil, err
 	}
 
-	// Same as your successful wget
 	req.Header.Set("Cookie", fmt.Sprintf("LEETCODE_SESSION=%s; csrftoken=%s", sessionToken, csrfToken))
 	req.Header.Set("User-Agent", "Mozilla/5.0")
 
@@ -506,30 +487,23 @@ func filterAcceptedSubmissions(submissions []Submission) []Submission {
 	seen := make(map[string]bool)
 
 	for _, sub := range submissions {
-		// Only "Accepted"
-		if sub.StatusDisplay != "Accepted" {
-			continue
+		// LeetCode: status 10 = Accepted
+		if (sub.Status == 10 || sub.Status == 0) && !seen[sub.TitleSlug] {
+			accepted = append(accepted, sub)
+			seen[sub.TitleSlug] = true
 		}
-
-		// Only keep latest per problem (dedupe by title_slug)
-		if seen[sub.TitleSlug] {
-			continue
-		}
-
-		accepted = append(accepted, sub)
-		seen[sub.TitleSlug] = true
 	}
 
 	return accepted
 }
 
 func fetchProblemDetail(titleSlug string) (ProblemDetail, error) {
-	payload := fmt.Sprintf(`{
+	query := fmt.Sprintf(`{
 		"query": "query getQuestionDetail($titleSlug: String!) { question(titleSlug: $titleSlug) { questionId questionFrontendId title titleSlug difficulty topicTags { name slug } content } }",
 		"variables": {"titleSlug": "%s"}
 	}`, titleSlug)
 
-	req, err := http.NewRequest("POST", graphqlEndpoint, strings.NewReader(payload))
+	req, err := http.NewRequest("POST", graphqlEndpoint, strings.NewReader(query))
 	if err != nil {
 		return ProblemDetail{}, err
 	}
@@ -559,104 +533,56 @@ func fetchProblemDetail(titleSlug string) (ProblemDetail, error) {
 	return result.Data.Question, nil
 }
 
-func fetchViaGraphQL(submissionID int) (string, string, error) {
-	body := fmt.Sprintf(`{
-		"query": "query getSubmission($id: Int!) { submissionDetails(submissionId: $id) { code lang } }",
-		"variables": { "id": %d }
-	}`, submissionID)
-
-	req, _ := http.NewRequest("POST", graphqlEndpoint, strings.NewReader(body))
-
-	req.Header.Set("Content-Type", "application/json")
-	req.Header.Set("Origin", "https://leetcode.com")
-	req.Header.Set("Referer", fmt.Sprintf("https://leetcode.com/submissions/detail/%d/", submissionID))
-	req.Header.Set("Cookie", fmt.Sprintf("LEETCODE_SESSION=%s; csrftoken=%s", sessionToken, csrfToken))
-	req.Header.Set("x-csrftoken", csrfToken)
-	req.Header.Set("User-Agent", "Mozilla/5.0")
-
-	client := &http.Client{Timeout: 30 * time.Second}
-	resp, err := client.Do(req)
-	if err != nil {
-		return "", "", err
-	}
-	defer resp.Body.Close()
-
-	var out struct {
-		Data struct {
-			Details struct {
-				Code string `json:"code"`
-				Lang string `json:"lang"`
-			} `json:"submissionDetails"`
-		} `json:"data"`
-	}
-
-	if err := json.NewDecoder(resp.Body).Decode(&out); err != nil {
-		return "", "", err
-	}
-
-	if out.Data.Details.Code == "" {
-		return "", "", fmt.Errorf("LeetCode denied access → submission likely locked or auth failed")
-	}
-
-	return out.Data.Details.Code, out.Data.Details.Lang, nil
-}
-
 // ==========================
 // Problem Processing
 // ==========================
 
 func processSubmission(sub Submission) error {
-	// 1. Fetch problem details (difficulty, tags, content)
+	// Sanity check: if API didn't give code, we can't do much
+	if strings.TrimSpace(sub.Code) == "" {
+		return fmt.Errorf("submission %d has empty code (likely locked or older format)", sub.ID)
+	}
+
+	// Fetch problem details (difficulty, tags, description)
 	problemDetail, err := fetchProblemDetail(sub.TitleSlug)
 	if err != nil {
 		return fmt.Errorf("fetching problem details: %w", err)
 	}
 
-	// 2. Use code directly from /api/submissions/ response
-	code := sub.Code
-	lang := sub.Lang
-
-	if strings.TrimSpace(code) == "" {
-		return fmt.Errorf("submission %d has empty code (maybe locked or hidden)", sub.ID)
-	}
-
-	// 3. Determine category + difficulty
+	// Determine category and file paths
 	category := determineCategory(problemDetail.TopicTags)
 	difficulty := problemDetail.Difficulty
-	extension := getFileExtension(lang)
+	extension := getFileExtension(sub.Lang)
 
-	// 4. Build folder: Category/Difficulty/<ID.slug>/
-	problemFolder := fmt.Sprintf("%s.%s",
-		problemDetail.QuestionFrontendID,
-		sanitizeFilename(sub.TitleSlug),
-	)
-
+	// Structure: Category/Difficulty/ID.TitleSlug/
+	problemFolder := fmt.Sprintf("%s.%s", problemDetail.QuestionFrontendID, sanitizeFilename(sub.TitleSlug))
 	dirPath := filepath.Join(category, difficulty, problemFolder)
 	if err := os.MkdirAll(dirPath, 0755); err != nil {
 		return fmt.Errorf("creating directory: %w", err)
 	}
 
-	// 5. File name: <ID>.<slug>.<ext>
+	// Filename inside folder: ID.slug.ext
 	filename := fmt.Sprintf("%s.%s.%s",
 		problemDetail.QuestionFrontendID,
 		sanitizeFilename(sub.TitleSlug),
-		extension,
-	)
+		extension)
+
 	filePath := filepath.Join(dirPath, filename)
 
-	if err := os.WriteFile(filePath, []byte(code), 0644); err != nil {
+	// Write solution file
+	if err := os.WriteFile(filePath, []byte(sub.Code), 0644); err != nil {
 		return fmt.Errorf("writing solution file: %w", err)
 	}
 	fmt.Printf("  ✓ Created: %s\n", filePath)
 
-	// 6. README.md
+	// Problem README
 	readmePath := filepath.Join(dirPath, "README.md")
-	if err := createProblemREADME(readmePath, problemDetail, lang); err != nil {
+	if err := createProblemREADME(readmePath, problemDetail, sub.Lang); err != nil {
 		return fmt.Errorf("creating problem README: %w", err)
 	}
 	fmt.Printf("  ✓ Created: %s\n", readmePath)
 
-	// 7. Update sync DB
+	// Update sync DB
 	syncDB.Synced[fmt.Sprintf("%d", sub.ID)] = SyncEntry{
 		SubmissionID: sub.ID,
 		ProblemID:    problemDetail.QuestionFrontendID,
@@ -1013,5 +939,30 @@ func cleanupFailedEntries() int {
 func debugLog(msg string) {
 	if debugMode {
 		fmt.Printf("[DEBUG] %s\n", msg)
+	}
+}
+
+func describeStatus(status int) string {
+	switch status {
+	case 10:
+		return "Accepted (10) ✅"
+	case 11:
+		return "Wrong Answer ❌"
+	case 12:
+		return "Memory Limit Exceeded"
+	case 13:
+		return "Output Limit Exceeded"
+	case 14:
+		return "Time Limit Exceeded ⏱️"
+	case 15:
+		return "Runtime Error 💥"
+	case 16:
+		return "Internal Error"
+	case 20:
+		return "Compile Error 🔨"
+	case 0:
+		return "Accepted (0?) ✅"
+	default:
+		return fmt.Sprintf("Status %d", status)
 	}
 }
