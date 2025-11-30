@@ -6,49 +6,49 @@
       "title": "Intersection of Two Linked Lists",
       "title_slug": "intersection-of-two-linked-lists",
       "last_error": "fetching submission code: GraphQL API returned status 400",
-      "retry_count": 3,
-      "last_tried": "2025-11-30T12:35:15.751455843+05:30"
+      "retry_count": 4,
+      "last_tried": "2025-11-30T12:37:04.500642753+05:30"
     },
     "1837458662": {
       "submission_id": 1837458662,
       "title": "Remove Nth Node From End of List",
       "title_slug": "remove-nth-node-from-end-of-list",
       "last_error": "fetching submission code: GraphQL API returned status 400",
-      "retry_count": 3,
-      "last_tried": "2025-11-30T12:35:14.727373949+05:30"
+      "retry_count": 4,
+      "last_tried": "2025-11-30T12:37:03.785367806+05:30"
     },
     "1838695873": {
       "submission_id": 1838695873,
       "title": "Flatten a Multilevel Doubly Linked List",
       "title_slug": "flatten-a-multilevel-doubly-linked-list",
       "last_error": "fetching submission code: GraphQL API returned status 400",
-      "retry_count": 3,
-      "last_tried": "2025-11-30T12:35:13.896720331+05:30"
+      "retry_count": 4,
+      "last_tried": "2025-11-30T12:37:03.055873825+05:30"
     },
     "1839077935": {
       "submission_id": 1839077935,
       "title": "Add Two Numbers",
       "title_slug": "add-two-numbers",
       "last_error": "fetching submission code: GraphQL API returned status 400",
-      "retry_count": 3,
-      "last_tried": "2025-11-30T12:35:12.770677903+05:30"
+      "retry_count": 4,
+      "last_tried": "2025-11-30T12:37:01.933764785+05:30"
     },
     "1839619084": {
       "submission_id": 1839619084,
       "title": "Rotate List",
       "title_slug": "rotate-list",
       "last_error": "fetching submission code: GraphQL API returned status 400",
-      "retry_count": 3,
-      "last_tried": "2025-11-30T12:35:11.951028316+05:30"
+      "retry_count": 4,
+      "last_tried": "2025-11-30T12:37:01.220183116+05:30"
     },
     "1842613044": {
       "submission_id": 1842613044,
       "title": "Reverse Nodes in k-Group",
       "title_slug": "reverse-nodes-in-k-group",
       "last_error": "fetching submission code: GraphQL API returned status 400",
-      "retry_count": 3,
-      "last_tried": "2025-11-30T12:35:10.938239018+05:30"
+      "retry_count": 4,
+      "last_tried": "2025-11-30T12:36:59.616985709+05:30"
     }
   },
-  "last_synced": "2025-11-30T12:35:15.763104096+05:30"
+  "last_synced": "2025-11-30T12:37:04.511134549+05:30"
 }
