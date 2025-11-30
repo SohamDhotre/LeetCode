@@ -1,0 +1,59 @@
+{
+  "synced": {
+    "1837431940": {
+      "submission_id": 1837431940,
+      "problem_id": "160",
+      "title": "Intersection of Two Linked Lists",
+      "title_slug": "intersection-of-two-linked-lists",
+      "difficulty": "Easy",
+      "category": "Hash Table",
+      "timestamp": "2025-11-30T14:28:44.996765921+05:30"
+    },
+    "1837458662": {
+      "submission_id": 1837458662,
+      "problem_id": "19",
+      "title": "Remove Nth Node From End of List",
+      "title_slug": "remove-nth-node-from-end-of-list",
+      "difficulty": "Medium",
+      "category": "Linked List",
+      "timestamp": "2025-11-30T14:28:44.165074923+05:30"
+    },
+    "1838695873": {
+      "submission_id": 1838695873,
+      "problem_id": "430",
+      "title": "Flatten a Multilevel Doubly Linked List",
+      "title_slug": "flatten-a-multilevel-doubly-linked-list",
+      "difficulty": "Medium",
+      "category": "Linked List",
+      "timestamp": "2025-11-30T14:28:43.810103323+05:30"
+    },
+    "1839077935": {
+      "submission_id": 1839077935,
+      "problem_id": "2",
+      "title": "Add Two Numbers",
+      "title_slug": "add-two-numbers",
+      "difficulty": "Medium",
+      "category": "Linked List",
+      "timestamp": "2025-11-30T14:28:43.454170184+05:30"
+    },
+    "1839619084": {
+      "submission_id": 1839619084,
+      "problem_id": "61",
+      "title": "Rotate List",
+      "title_slug": "rotate-list",
+      "difficulty": "Medium",
+      "category": "Linked List",
+      "timestamp": "2025-11-30T14:28:43.047188013+05:30"
+    },
+    "1842613044": {
+      "submission_id": 1842613044,
+      "problem_id": "25",
+      "title": "Reverse Nodes in k-Group",
+      "title_slug": "reverse-nodes-in-k-group",
+      "difficulty": "Hard",
+      "category": "Linked List",
+      "timestamp": "2025-11-30T14:28:42.682323473+05:30"
+    }
+  },
+  "last_synced": "2025-11-30T14:28:45.000175376+05:30"
+}
