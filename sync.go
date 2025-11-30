@@ -521,7 +521,7 @@ func processSubmission(sub Submission) error {
 	// Determine category and file paths
 	category := determineCategory(problemDetail.TopicTags)
 	difficulty := problemDetail.Difficulty
-	extension := getFileExtension(sub.Lang)
+	extension := getFileExtension(result.Data.SubmissionDetails.Lang)
 
 	// Create directory structure
 	// Structure: Category/Difficulty/ID.TitleSlug/
@@ -605,7 +605,7 @@ func fetchProblemDetail(titleSlug string) (ProblemDetail, error) {
 func fetchSubmissionCode(submissionID int) (string, error) {
 	// GraphQL query for submission details (updated to new schema)
 	query := fmt.Sprintf(`{
-		"query": "query submissionDetails($submissionId: Int!) { submissionDetails(submissionId: $submissionId) { code runtimeDisplay memoryDisplay lang { slug name } } }",
+		"query": "query submissionDetails($submissionId: Int!) { submissionDetails(submissionId: $submissionId) { code runtimeDisplay memoryDisplay lang } }",
 		"variables": {"submissionId": %d}
 	}`, submissionID)
 
@@ -652,10 +652,7 @@ func fetchSubmissionCode(submissionID int) (string, error) {
 				Code           string `json:"code"`
 				RuntimeDisplay string `json:"runtimeDisplay"`
 				MemoryDisplay  string `json:"memoryDisplay"`
-				Lang           struct {
-					Slug string `json:"slug"`
-					Name string `json:"name"`
-				} `json:"lang"`
+				Lang           string `json:"lang"`
 			} `json:"submissionDetails"`
 		} `json:"data"`
 	}
@@ -673,8 +670,7 @@ func fetchSubmissionCode(submissionID int) (string, error) {
 		fmt.Printf("   [DEBUG] Runtime: %s, Memory: %s, Lang: %s (%s)\n",
 			result.Data.SubmissionDetails.RuntimeDisplay,
 			result.Data.SubmissionDetails.MemoryDisplay,
-			result.Data.SubmissionDetails.Lang.Slug,
-			result.Data.SubmissionDetails.Lang.Name)
+			result.Data.SubmissionDetails.Lang)
 	}
 
 	return code, nil
