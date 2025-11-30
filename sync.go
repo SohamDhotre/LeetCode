@@ -546,52 +546,46 @@ func fetchProblemDetail(titleSlug string) (ProblemDetail, error) {
 	return result.Data.Question, nil
 }
 
-func fetchSubmissionCode(submissionID int, titleSlug string) (string, string, error) {
-	url := fmt.Sprintf("https://leetcode.com/api/submissions/%s/?offset=0&limit=20", titleSlug)
+func fetchViaGraphQL(submissionID int) (string, string, error) {
+	body := fmt.Sprintf(`{
+		"query": "query getSubmission($id: Int!) { submissionDetails(submissionId: $id) { code lang } }",
+		"variables": { "id": %d }
+	}`, submissionID)
 
-	req, err := http.NewRequest("GET", url, nil)
-	if err != nil {
-		return "", "", err
-	}
+	req, _ := http.NewRequest("POST", graphqlEndpoint, strings.NewReader(body))
 
+	req.Header.Set("Content-Type", "application/json")
+	req.Header.Set("Origin", "https://leetcode.com")
+	req.Header.Set("Referer", fmt.Sprintf("https://leetcode.com/submissions/detail/%d/", submissionID))
 	req.Header.Set("Cookie", fmt.Sprintf("LEETCODE_SESSION=%s; csrftoken=%s", sessionToken, csrfToken))
+	req.Header.Set("x-csrftoken", csrfToken)
 	req.Header.Set("User-Agent", "Mozilla/5.0")
 
-	client := &http.Client{Timeout: 15 * time.Second}
+	client := &http.Client{Timeout: 30 * time.Second}
 	resp, err := client.Do(req)
 	if err != nil {
 		return "", "", err
 	}
 	defer resp.Body.Close()
 
-	if resp.StatusCode != 200 {
-		body, _ := io.ReadAll(resp.Body)
-		return "", "", fmt.Errorf("API returned %d: %s", resp.StatusCode, string(body))
+	var out struct {
+		Data struct {
+			Details struct {
+				Code string `json:"code"`
+				Lang string `json:"lang"`
+			} `json:"submissionDetails"`
+		} `json:"data"`
 	}
 
-	var data struct {
-		Submissions []struct {
-			ID   int    `json:"id"`
-			Code string `json:"code"`
-			Lang string `json:"lang"`
-		} `json:"submissions"`
+	if err := json.NewDecoder(resp.Body).Decode(&out); err != nil {
+		return "", "", err
 	}
 
-	if err := json.NewDecoder(resp.Body).Decode(&data); err != nil {
-		return "", "", fmt.Errorf("invalid JSON: %w", err)
+	if out.Data.Details.Code == "" {
+		return "", "", fmt.Errorf("LeetCode denied access → submission likely locked or auth failed")
 	}
 
-	// Find matching submissionID
-	for _, sub := range data.Submissions {
-		if sub.ID == submissionID {
-			if sub.Code == "" {
-				return "", "", fmt.Errorf("code is empty, submission is likely locked")
-			}
-			return sub.Code, sub.Lang, nil
-		}
-	}
-
-	return "", "", fmt.Errorf("submission %d not found in API results", submissionID)
+	return out.Data.Details.Code, out.Data.Details.Lang, nil
 }
 
 // ==========================
@@ -606,7 +600,7 @@ func processSubmission(sub Submission) error {
 	}
 
 	// Fetch submission code + lang
-	code, lang, err := fetchSubmissionCode(sub.ID, sub.TitleSlug)
+	code, lang, err := fetchViaGraphQL(sub.ID)
 	if err != nil {
 		return fmt.Errorf("fetching submission code: %w", err)
 	}
