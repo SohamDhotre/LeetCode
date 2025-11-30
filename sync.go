@@ -30,12 +30,16 @@ type Config struct {
 }
 
 type Submission struct {
-	ID         int    `json:"id"`
-	Lang       string `json:"lang"`
-	StatusCode int    `json:"status_code"` // 10 = Accepted (0 also treated as accepted)
-	Title      string `json:"title"`
-	TitleSlug  string `json:"title_slug"`
-	Timestamp  int64  `json:"timestamp"`
+	ID            int    `json:"id"`
+	QuestionID    int    `json:"question_id"`
+	Lang          string `json:"lang"`
+	LangName      string `json:"lang_name"`
+	Timestamp     int64  `json:"timestamp"`
+	Status        int    `json:"status"`
+	StatusDisplay string `json:"status_display"`
+	Title         string `json:"title"`
+	TitleSlug     string `json:"title_slug"`
+	Code          string `json:"code"`
 }
 
 // Not currently used, kept for possible future
@@ -470,7 +474,8 @@ func fetchRecentSubmissions() ([]Submission, error) {
 		return nil, err
 	}
 
-	req.Header.Set("Cookie", fmt.Sprintf("LEETCODE_SESSION=%s", sessionToken))
+	// Same as your successful wget
+	req.Header.Set("Cookie", fmt.Sprintf("LEETCODE_SESSION=%s; csrftoken=%s", sessionToken, csrfToken))
 	req.Header.Set("User-Agent", "Mozilla/5.0")
 
 	client := &http.Client{Timeout: 30 * time.Second}
@@ -501,29 +506,37 @@ func filterAcceptedSubmissions(submissions []Submission) []Submission {
 	seen := make(map[string]bool)
 
 	for _, sub := range submissions {
-		// Status 10 = Accepted, Status 0 also appears to be Accepted in some cases
-		if (sub.StatusCode == 10 || sub.StatusCode == 0) && !seen[sub.TitleSlug] {
-			accepted = append(accepted, sub)
-			seen[sub.TitleSlug] = true
+		// Only "Accepted"
+		if sub.StatusDisplay != "Accepted" {
+			continue
 		}
+
+		// Only keep latest per problem (dedupe by title_slug)
+		if seen[sub.TitleSlug] {
+			continue
+		}
+
+		accepted = append(accepted, sub)
+		seen[sub.TitleSlug] = true
 	}
 
 	return accepted
 }
 
 func fetchProblemDetail(titleSlug string) (ProblemDetail, error) {
-	query := fmt.Sprintf(`{
+	payload := fmt.Sprintf(`{
 		"query": "query getQuestionDetail($titleSlug: String!) { question(titleSlug: $titleSlug) { questionId questionFrontendId title titleSlug difficulty topicTags { name slug } content } }",
 		"variables": {"titleSlug": "%s"}
 	}`, titleSlug)
 
-	req, err := http.NewRequest("POST", graphqlEndpoint, strings.NewReader(query))
+	req, err := http.NewRequest("POST", graphqlEndpoint, strings.NewReader(payload))
 	if err != nil {
 		return ProblemDetail{}, err
 	}
 
 	req.Header.Set("Content-Type", "application/json")
-	req.Header.Set("Cookie", fmt.Sprintf("LEETCODE_SESSION=%s", sessionToken))
+	req.Header.Set("Cookie", fmt.Sprintf("LEETCODE_SESSION=%s; csrftoken=%s", sessionToken, csrfToken))
+	req.Header.Set("x-csrftoken", csrfToken)
 	req.Header.Set("User-Agent", "Mozilla/5.0")
 
 	client := &http.Client{Timeout: 30 * time.Second}
@@ -593,56 +606,57 @@ func fetchViaGraphQL(submissionID int) (string, string, error) {
 // ==========================
 
 func processSubmission(sub Submission) error {
-	// Fetch problem details
+	// 1. Fetch problem details (difficulty, tags, content)
 	problemDetail, err := fetchProblemDetail(sub.TitleSlug)
 	if err != nil {
 		return fmt.Errorf("fetching problem details: %w", err)
 	}
 
-	// Fetch submission code + lang
-	code, lang, err := fetchViaGraphQL(sub.ID)
-	if err != nil {
-		return fmt.Errorf("fetching submission code: %w", err)
+	// 2. Use code directly from /api/submissions/ response
+	code := sub.Code
+	lang := sub.Lang
+
+	if strings.TrimSpace(code) == "" {
+		return fmt.Errorf("submission %d has empty code (maybe locked or hidden)", sub.ID)
 	}
 
-	if lang == "" {
-		lang = sub.Lang
-	}
-
-	// Determine category and file paths
+	// 3. Determine category + difficulty
 	category := determineCategory(problemDetail.TopicTags)
 	difficulty := problemDetail.Difficulty
 	extension := getFileExtension(lang)
 
-	// Structure: Category/Difficulty/ID.TitleSlug/
-	problemFolder := fmt.Sprintf("%s.%s", problemDetail.QuestionFrontendID, sanitizeFilename(sub.TitleSlug))
+	// 4. Build folder: Category/Difficulty/<ID.slug>/
+	problemFolder := fmt.Sprintf("%s.%s",
+		problemDetail.QuestionFrontendID,
+		sanitizeFilename(sub.TitleSlug),
+	)
+
 	dirPath := filepath.Join(category, difficulty, problemFolder)
 	if err := os.MkdirAll(dirPath, 0755); err != nil {
 		return fmt.Errorf("creating directory: %w", err)
 	}
 
-	// Filename inside folder: ID.slug.ext
+	// 5. File name: <ID>.<slug>.<ext>
 	filename := fmt.Sprintf("%s.%s.%s",
 		problemDetail.QuestionFrontendID,
 		sanitizeFilename(sub.TitleSlug),
-		extension)
-
+		extension,
+	)
 	filePath := filepath.Join(dirPath, filename)
 
-	// Write solution file
 	if err := os.WriteFile(filePath, []byte(code), 0644); err != nil {
 		return fmt.Errorf("writing solution file: %w", err)
 	}
 	fmt.Printf("  ✓ Created: %s\n", filePath)
 
-	// Problem README
+	// 6. README.md
 	readmePath := filepath.Join(dirPath, "README.md")
 	if err := createProblemREADME(readmePath, problemDetail, lang); err != nil {
 		return fmt.Errorf("creating problem README: %w", err)
 	}
 	fmt.Printf("  ✓ Created: %s\n", readmePath)
 
-	// Update sync DB
+	// 7. Update sync DB
 	syncDB.Synced[fmt.Sprintf("%d", sub.ID)] = SyncEntry{
 		SubmissionID: sub.ID,
 		ProblemID:    problemDetail.QuestionFrontendID,
