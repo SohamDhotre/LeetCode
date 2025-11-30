@@ -7,15 +7,11 @@ import (
 	"net/http"
 	"os"
 	"os/exec"
-	"os/signal"
 	"path/filepath"
 	"regexp"
 	"sort"
 	"strings"
-	"syscall"
 	"time"
-
-	"github.com/joho/godotenv"
 )
 
 // Configuration structures
@@ -167,10 +163,6 @@ func main() {
 		fmt.Printf("⚠️  Warning: Could not push pending changes: %v\n", err)
 	}
 
-	// Setup signal handling for manual trigger (kill -USR1 <pid> inside container)
-	sigChan := make(chan os.Signal, 1)
-	signal.Notify(sigChan, syscall.SIGUSR1)
-
 	// Run sync immediately on startup
 	fmt.Println("🚀 Starting initial sync...")
 	performSync()
@@ -181,15 +173,7 @@ func main() {
 		performSync()
 
 		fmt.Printf("[%s] 💤 Sleeping for 10 minutes (or until manual trigger)...\n", time.Now().Format("15:04:05"))
-
-		// Wait for 10 minutes OR a manual trigger signal
-		select {
-		case <-time.After(10 * time.Minute):
-			// continue loop
-		case <-sigChan:
-			fmt.Println("\n⚡ Manual sync triggered!")
-			performSync()
-		}
+		time.Sleep(10 * time.Minute)
 	}
 }
 
@@ -667,7 +651,7 @@ func fetchSubmissionCode(submissionID int) (string, error) {
 	// Debug: Log code length and metadata
 	fmt.Printf("   [DEBUG] Code length: %d chars\n", len(code))
 	if len(code) > 0 {
-		fmt.Printf("   [DEBUG] Runtime: %s, Memory: %s, Lang: %s (%s)\n",
+		fmt.Printf("   [DEBUG] Runtime: %s, Memory: %s, Lang: %s\n",
 			result.Data.SubmissionDetails.RuntimeDisplay,
 			result.Data.SubmissionDetails.MemoryDisplay,
 			result.Data.SubmissionDetails.Lang)
