@@ -606,7 +606,7 @@ func processSubmission(sub Submission) error {
 	}
 
 	// Fetch submission code + lang
-	code, lang, err := fetchSubmissionCode(sub.ID)
+	code, lang, err := fetchSubmissionCode(sub.ID, sub.TitleSlug)
 	if err != nil {
 		return fmt.Errorf("fetching submission code: %w", err)
 	}
