@@ -1,0 +1,22 @@
+# Environment variables
+.env
+
+# Sync executable
+sync.exe
+sync
+scheduler.exe
+scheduler
+
+# Sync database (optional - you may want to track this)
+# .leetcode_sync_db.json
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db

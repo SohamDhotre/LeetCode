@@ -1,0 +1,3 @@
+@echo off
+echo 📜 Viewing LeetCode Sync Logs (Ctrl+C to exit)...
+docker-compose logs -f

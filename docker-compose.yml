@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  leetcode-sync:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: leetcode-sync
+    volumes:
+      # Mount the current directory to persist solutions
+      - .:/workspace
+    environment:
+      # Load from .env file
+      - LEETCODE_SESSION=${LEETCODE_SESSION}
+      - MAX_SUBMISSIONS_TO_CHECK=${MAX_SUBMISSIONS_TO_CHECK:-20}
+      - DEBUG=${DEBUG:-false}
+      - TZ=Asia/Kolkata
+      # Git configuration
+      - GIT_USER_NAME=SohamDhotre
+      - GIT_USER_EMAIL=sohamdhotre@gmail.com
+    env_file:
+      - .env
+    working_dir: /workspace

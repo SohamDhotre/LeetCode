@@ -1,0 +1,2 @@
+# Ignore go.sum initially - will be generated
+go.sum
