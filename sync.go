@@ -546,8 +546,8 @@ func fetchProblemDetail(titleSlug string) (ProblemDetail, error) {
 	return result.Data.Question, nil
 }
 
-func fetchSubmissionCode(submissionID int) (string, string, error) {
-	url := fmt.Sprintf("https://leetcode.com/submissions/detail/%d/", submissionID)
+func fetchSubmissionCode(submissionID int, titleSlug string) (string, string, error) {
+	url := fmt.Sprintf("https://leetcode.com/api/submissions/%s/?offset=0&limit=20", titleSlug)
 
 	req, err := http.NewRequest("GET", url, nil)
 	if err != nil {
@@ -555,8 +555,6 @@ func fetchSubmissionCode(submissionID int) (string, string, error) {
 	}
 
 	req.Header.Set("Cookie", fmt.Sprintf("LEETCODE_SESSION=%s; csrftoken=%s", sessionToken, csrfToken))
-	req.Header.Set("x-csrftoken", csrfToken)
-	req.Header.Set("Referer", "https://leetcode.com")
 	req.Header.Set("User-Agent", "Mozilla/5.0")
 
 	client := &http.Client{Timeout: 15 * time.Second}
@@ -568,31 +566,32 @@ func fetchSubmissionCode(submissionID int) (string, string, error) {
 
 	if resp.StatusCode != 200 {
 		body, _ := io.ReadAll(resp.Body)
-		return "", "", fmt.Errorf("submission page returned %d: %s", resp.StatusCode, string(body))
+		return "", "", fmt.Errorf("API returned %d: %s", resp.StatusCode, string(body))
 	}
 
-	html, err := io.ReadAll(resp.Body)
-	if err != nil {
-		return "", "", err
+	var data struct {
+		Submissions []struct {
+			ID   int    `json:"id"`
+			Code string `json:"code"`
+			Lang string `json:"lang"`
+		} `json:"submissions"`
 	}
 
-	// Extract code & language from embedded JSON (JS variable)
-	regex := regexp.MustCompile(`"submissionCode":"(.*?)","runtime":".*?","memory":".*?","lang":"(.*?)"`)
-	matches := regex.FindStringSubmatch(string(html))
-	if len(matches) < 3 {
-		return "", "", fmt.Errorf("could not extract code from submission page — likely logged out or schema change")
+	if err := json.NewDecoder(resp.Body).Decode(&data); err != nil {
+		return "", "", fmt.Errorf("invalid JSON: %w", err)
 	}
 
-	// Restore escaped chars like \n, \"
-	code := strings.ReplaceAll(matches[1], `\"`, `"`)
-	code = strings.ReplaceAll(code, `\\n`, "\n")
-	code = strings.ReplaceAll(code, `\\t`, "\t")
+	// Find matching submissionID
+	for _, sub := range data.Submissions {
+		if sub.ID == submissionID {
+			if sub.Code == "" {
+				return "", "", fmt.Errorf("code is empty, submission is likely locked")
+			}
+			return sub.Code, sub.Lang, nil
+		}
+	}
 
-	lang := matches[2]
-
-	fmt.Printf("   [DEBUG] Code extracted successfully (%d chars)\n", len(code))
-
-	return code, lang, nil
+	return "", "", fmt.Errorf("submission %d not found in API results", submissionID)
 }
 
 // ==========================
