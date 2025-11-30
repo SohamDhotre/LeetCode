@@ -28,18 +28,10 @@ type Config struct {
 type Submission struct {
 	ID         int    `json:"id"`
 	Lang       string `json:"lang"`
-	StatusCode int    `json:"status_code"` // 10 = Accepted (0 also treated as accepted)
+	StatusCode int    `json:"status_code"`
 	Title      string `json:"title"`
 	TitleSlug  string `json:"title_slug"`
 	Timestamp  int64  `json:"timestamp"`
-}
-
-// Not currently used, kept for future extension
-type SubmissionDetail struct {
-	Code      string `json:"code"`
-	Lang      string `json:"lang"`
-	Question  string `json:"question"`
-	StatusMsg string `json:"status_msg"`
 }
 
 type TopicTag struct {
@@ -63,7 +55,6 @@ type GraphQLResponse struct {
 	} `json:"data"`
 }
 
-// Sync database structure
 type SyncDatabase struct {
 	Synced     map[string]SyncEntry    `json:"synced"`
 	Failed     map[string]*FailedEntry `json:"failed,omitempty"`
@@ -99,12 +90,11 @@ var (
 )
 
 const (
-	syncDBFile          = ".leetcode_sync_db.json"
-	submissionsEndpoint = "https://leetcode.com/api/submissions/"
-	graphqlEndpoint     = "https://leetcode.com/graphql"
-
+	syncDBFile              = ".leetcode_sync_db.json"
+	submissionsEndpoint     = "https://leetcode.com/api/submissions/"
+	graphqlEndpoint         = "https://leetcode.com/graphql"
 	maxRetriesPerSubmission = 5
-	staleFailedDays         = 30 // remove failed entries older than this with max retries reached
+	staleFailedDays         = 30
 )
 
 func main() {
@@ -114,41 +104,24 @@ func main() {
 	fmt.Println("⏱️  Frequency: Every 10 minutes")
 
 	// Load environment variables
-	if err := godotenv.Load(); err != nil {
-		fmt.Println("⚠️  No .env file found. Make sure LEETCODE_SESSION is set.")
-	}
-
 	sessionToken = os.Getenv("LEETCODE_SESSION")
-	if sessionToken == "" {
-		fmt.Println("❌ Error: LEETCODE_SESSION environment variable not set")
-		os.Exit(1)
-	}
-
 	csrfToken = os.Getenv("CSRF_TOKEN")
-	if csrfToken == "" {
-		fmt.Println("❌ Error: CSRF_TOKEN environment variable not set")
-		fmt.Println("💡 Get it from browser cookies (Application > Cookies > leetcode.com > csrftoken)")
-		os.Exit(1)
-	}
 
 	// Validate session immediately
 	fmt.Println("🔑 Validating session...")
 	if err := validateSession(); err != nil {
 		fmt.Printf("❌ Session validation failed: %v\n", err)
-		fmt.Println("⚠️  Your LEETCODE_SESSION cookie might be expired. Please update it in .env")
 		os.Exit(1)
 	}
 	fmt.Println("✅ Session is valid!")
 
 	debugMode = os.Getenv("DEBUG") == "true"
 
-	// Load configuration
 	if err := loadConfig(); err != nil {
 		fmt.Printf("❌ Error loading config: %v\n", err)
 		os.Exit(1)
 	}
 
-	// Load sync database
 	if err := loadSyncDB(); err != nil {
 		fmt.Printf("⚠️  Creating new sync database: %v\n", err)
 		syncDB = SyncDatabase{
@@ -157,22 +130,16 @@ func main() {
 		}
 	}
 
-	// Check for pending changes that failed to push previously
 	fmt.Println("🔍 Checking for unpushed changes...")
-	if err := checkAndPushPendingChanges(); err != nil {
-		fmt.Printf("⚠️  Warning: Could not push pending changes: %v\n", err)
-	}
+	checkAndPushPendingChanges()
 
-	// Run sync immediately on startup
 	fmt.Println("🚀 Starting initial sync...")
 	performSync()
 
-	// Daemon Loop - always sync every 10 minutes
 	for {
 		fmt.Printf("\n[%s] ⏰ Time to sync!\n", time.Now().Format("15:04:05"))
 		performSync()
-
-		fmt.Printf("[%s] 💤 Sleeping for 10 minutes (or until manual trigger)...\n", time.Now().Format("15:04:05"))
+		fmt.Printf("[%s] 💤 Sleeping for 10 minutes...\n", time.Now().Format("15:04:05"))
 		time.Sleep(10 * time.Minute)
 	}
 }
@@ -184,367 +151,78 @@ func performSync() {
 		fmt.Printf("❌ Error fetching submissions: %v\n", err)
 		return
 	}
-	fmt.Printf("   ✓ Fetched %d total submissions from API\n", len(submissions))
+	fmt.Printf("   ✓ Fetched %d total submissions\n", len(submissions))
 
-	// Log first few submissions for debugging
-	if len(submissions) > 0 {
-		fmt.Println("\n📋 Latest 10 submissions:")
-		limit := 10
-		if len(submissions) < limit {
-			limit = len(submissions)
-		}
-		for i := 0; i < limit; i++ {
-			sub := submissions[i]
-			statusText := "Unknown"
-			switch sub.StatusCode {
-			case 0:
-				statusText = "Accepted (Status 0) ✅"
-			case 10:
-				statusText = "Accepted (Status 10) ✅"
-			case 11:
-				statusText = "Wrong Answer ❌"
-			case 12:
-				statusText = "Memory Limit Exceeded"
-			case 13:
-				statusText = "Output Limit Exceeded"
-			case 14:
-				statusText = "Time Limit Exceeded ⏱️"
-			case 15:
-				statusText = "Runtime Error 💥"
-			case 16:
-				statusText = "Internal Error"
-			case 20:
-				statusText = "Compile Error 🔨"
-			default:
-				statusText = fmt.Sprintf("Status %d", sub.StatusCode)
-			}
-			fmt.Printf("   %d. [%s] %s (ID: %d, Lang: %s)\n",
-				i+1, statusText, sub.Title, sub.ID, sub.Lang)
-		}
-		fmt.Println()
-	}
+	accepted := filterAcceptedSubmissions(submissions)
+	fmt.Printf("   ✓ Found %d accepted submissions\n", len(accepted))
 
-	// Filter accepted submissions
-	acceptedSubmissions := filterAcceptedSubmissions(submissions)
-	fmt.Printf("   ✓ Found %d accepted submissions (after filtering)\n", len(acceptedSubmissions))
-
-	if len(acceptedSubmissions) == 0 {
-		fmt.Println("✨ No accepted submissions found in recent history!")
-		return
-	}
-
-	// Check sync database
-	fmt.Printf("\n🔍 Checking sync database...\n")
-	fmt.Printf("   Database has %d previously synced submissions\n", len(syncDB.Synced))
-	if len(syncDB.Failed) > 0 {
-		fmt.Printf("   Database has %d failed submission(s) pending retry\n", len(syncDB.Failed))
-	}
-	if !syncDB.LastSynced.IsZero() {
-		fmt.Printf("   Last synced at: %s\n", syncDB.LastSynced.Format(time.RFC3339))
-	}
-
-	// Process new / failed submissions
 	newCount := 0
-	skippedCount := 0
 	failedThisRun := 0
-	retriedFixed := 0
 
-	for i, sub := range acceptedSubmissions {
-		submissionKey := fmt.Sprintf("%d", sub.ID)
+	for _, sub := range accepted {
+		key := fmt.Sprintf("%d", sub.ID)
 
-		// Already synced
-		if _, exists := syncDB.Synced[submissionKey]; exists {
-			skippedCount++
-			fmt.Printf("   ⏭️  [%d/%d] Skipping (already synced): %s (ID: %d)\n",
-				i+1, len(acceptedSubmissions), sub.Title, sub.ID)
-			continue
-		}
-
-		// Check if previously failed
-		failedEntry, hadFailed := syncDB.Failed[submissionKey]
-		if hadFailed && failedEntry.RetryCount >= maxRetriesPerSubmission {
-			fmt.Printf("   ⏭️  [%d/%d] Skipping (max retries reached): %s (ID: %d). Last error: %s\n",
-				i+1, len(acceptedSubmissions), sub.Title, sub.ID, failedEntry.LastError)
-			continue
-		}
-
-		if hadFailed {
-			fmt.Printf("\n🔄 [%d/%d] Retrying FAILED submission: %s\n", i+1, len(acceptedSubmissions), sub.Title)
-		} else {
-			fmt.Printf("\n🔄 [%d/%d] Processing NEW submission: %s\n", i+1, len(acceptedSubmissions), sub.Title)
-		}
-		fmt.Printf("   Submission ID: %d\n", sub.ID)
-		fmt.Printf("   Language: %s\n", sub.Lang)
-		fmt.Printf("   Title Slug: %s\n", sub.TitleSlug)
+		fmt.Printf("\n🔄 Processing: %s (ID: %d)\n", sub.Title, sub.ID)
 
 		if err := processSubmission(sub); err != nil {
-			fmt.Printf("   ❌ Error processing: %v\n", err)
+			fmt.Printf("   ❌ Error: %v\n", err)
 			failedThisRun++
-
-			now := time.Now()
-			if !hadFailed {
-				failedEntry = &FailedEntry{
-					SubmissionID: sub.ID,
-					Title:        sub.Title,
-					TitleSlug:    sub.TitleSlug,
-				}
-			}
-			failedEntry.RetryCount++
-			failedEntry.LastError = err.Error()
-			failedEntry.LastTried = now
-			syncDB.Failed[submissionKey] = failedEntry
+			syncDB.Failed[key] = &FailedEntry{SubmissionID: sub.ID, Title: sub.Title, TitleSlug: sub.TitleSlug}
 			continue
 		}
 
-		// Success
-		if hadFailed {
-			retriedFixed++
-			delete(syncDB.Failed, submissionKey)
-		}
 		newCount++
-		fmt.Printf("   ✅ Successfully processed!\n")
+		fmt.Println("   ✅ Success!")
 	}
 
-	// Cleanup stale failed entries
-	if removed := cleanupFailedEntries(); removed > 0 {
-		fmt.Printf("\n🧹 Cleaned up %d stale failed entrie(s) from sync DB\n", removed)
+	fmt.Println("\n📊 Summary:")
+	fmt.Printf("   Newly synced: %d | Failed: %d\n", newCount, failedThisRun)
+
+	saveSyncDB()
+
+	fmt.Println("📤 Pushing to GitHub...")
+	if err := gitAddCommitPush(newCount); err != nil {
+		fmt.Printf("⚠️ Git push warning: %v\n", err)
 	}
-
-	fmt.Printf("\n📊 Summary:\n")
-	fmt.Printf("   Total accepted considered: %d\n", len(acceptedSubmissions))
-	fmt.Printf("   Already synced (skipped): %d\n", skippedCount)
-	fmt.Printf("   Newly synced this run: %d\n", newCount)
-	fmt.Printf("   Failed this run: %d\n", failedThisRun)
-	if retriedFixed > 0 {
-		fmt.Printf("   Retried & fixed this run: %d\n", retriedFixed)
-	}
-	if len(syncDB.Failed) > 0 {
-		fmt.Printf("   Total pending failed submissions: %d\n", len(syncDB.Failed))
-	}
-
-	// Update master README (always update to ensure latest stats/links)
-	fmt.Println("\n📝 Updating master README...")
-	if err := updateMasterREADME(); err != nil {
-		fmt.Printf("⚠️  Error updating README: %v\n", err)
-	} else {
-		fmt.Println("   ✓ README updated")
-	}
-
-	if newCount == 0 && failedThisRun == 0 && retriedFixed == 0 {
-		fmt.Println("\n✨ No changes to sync (no new or recovered submissions).")
-
-		// Check for any changes (e.g. README updates)
-		if err := checkAndPushPendingChanges(); err != nil {
-			fmt.Printf("⚠️  Warning: Could not push pending changes: %v\n", err)
-		}
-		return
-	}
-
-	// Save sync database
-	fmt.Println("\n💾 Saving sync database...")
-	syncDB.LastSynced = time.Now()
-	if err := saveSyncDB(); err != nil {
-		fmt.Printf("❌ Error saving sync database: %v\n", err)
-	} else {
-		fmt.Println("   ✓ Database saved")
-	}
-
-	// Git operations
-	fmt.Println("\n📤 Pushing to GitHub...")
-	if err := gitAddCommitPush(newCount + retriedFixed); err != nil {
-		fmt.Printf("❌ Error with git operations: %v\n", err)
-	} else {
-		fmt.Println("   ✅ Successfully pushed to GitHub!")
-	}
-
-	fmt.Printf("\n🎉 Sync cycle complete! Processed %d successful submission(s)\n", newCount+retriedFixed)
-}
-
-func loadConfig() error {
-	data, err := os.ReadFile("config.json")
-	if err != nil {
-		return err
-	}
-	return json.Unmarshal(data, &config)
-}
-
-func loadSyncDB() error {
-	data, err := os.ReadFile(syncDBFile)
-	if err != nil {
-		return err
-	}
-	if err := json.Unmarshal(data, &syncDB); err != nil {
-		return err
-	}
-	if syncDB.Synced == nil {
-		syncDB.Synced = make(map[string]SyncEntry)
-	}
-	if syncDB.Failed == nil {
-		syncDB.Failed = make(map[string]*FailedEntry)
-	}
-	return nil
-}
-
-func saveSyncDB() error {
-	data, err := json.MarshalIndent(syncDB, "", "  ")
-	if err != nil {
-		return err
-	}
-	return os.WriteFile(syncDBFile, data, 0644)
-}
-
-func validateSession() error {
-	// Query global data to check if session is valid
-	query := `{"query": "query globalData { userStatus { isSignedIn } }"}`
-
-	req, err := http.NewRequest("POST", graphqlEndpoint, strings.NewReader(query))
-	if err != nil {
-		return err
-	}
-
-	req.Header.Set("Content-Type", "application/json")
-	req.Header.Set("Cookie", fmt.Sprintf("LEETCODE_SESSION=%s", sessionToken))
-	req.Header.Set("User-Agent", "Mozilla/5.0")
-
-	client := &http.Client{Timeout: 10 * time.Second}
-	resp, err := client.Do(req)
-	if err != nil {
-		return fmt.Errorf("network error: %w", err)
-	}
-	defer resp.Body.Close()
-
-	if resp.StatusCode != 200 {
-		return fmt.Errorf("API returned status %d", resp.StatusCode)
-	}
-
-	var result struct {
-		Data struct {
-			UserStatus struct {
-				IsSignedIn bool `json:"isSignedIn"`
-			} `json:"userStatus"`
-		} `json:"data"`
-	}
-
-	if err := json.NewDecoder(resp.Body).Decode(&result); err != nil {
-		return fmt.Errorf("failed to decode response: %w", err)
-	}
-
-	if !result.Data.UserStatus.IsSignedIn {
-		return fmt.Errorf("session is invalid or expired (isSignedIn: false)")
-	}
-
-	return nil
-}
-
-func fetchRecentSubmissions() ([]Submission, error) {
-	maxSubmissions := 10
-	if val := os.Getenv("MAX_SUBMISSIONS_TO_CHECK"); val != "" {
-		fmt.Sscanf(val, "%d", &maxSubmissions)
-	}
-
-	url := fmt.Sprintf("%s?offset=0&limit=%d", submissionsEndpoint, maxSubmissions)
-	req, err := http.NewRequest("GET", url, nil)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Set("Cookie", fmt.Sprintf("LEETCODE_SESSION=%s", sessionToken))
-	req.Header.Set("User-Agent", "Mozilla/5.0")
-
-	client := &http.Client{Timeout: 30 * time.Second}
-	resp, err := client.Do(req)
-	if err != nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
-
-	if resp.StatusCode != 200 {
-		body, _ := io.ReadAll(resp.Body)
-		return nil, fmt.Errorf("API returned status %d: %s", resp.StatusCode, string(body))
-	}
-
-	var result struct {
-		SubmissionsData []Submission `json:"submissions_dump"`
-	}
-
-	if err := json.NewDecoder(resp.Body).Decode(&result); err != nil {
-		return nil, err
-	}
-
-	return result.SubmissionsData, nil
-}
-
-func filterAcceptedSubmissions(submissions []Submission) []Submission {
-	var accepted []Submission
-	seen := make(map[string]bool)
-
-	for _, sub := range submissions {
-		// Status 10 = Accepted, Status 0 also appears to be Accepted in some cases
-		if (sub.StatusCode == 10 || sub.StatusCode == 0) && !seen[sub.TitleSlug] {
-			accepted = append(accepted, sub)
-			seen[sub.TitleSlug] = true
-		}
-	}
-
-	return accepted
 }
 
 func processSubmission(sub Submission) error {
-	// Fetch problem details
-	problemDetail, err := fetchProblemDetail(sub.TitleSlug)
+	details, err := fetchProblemDetail(sub.TitleSlug)
 	if err != nil {
-		return fmt.Errorf("fetching problem details: %w", err)
+		return err
 	}
 
-	// Fetch submission code
 	code, err := fetchSubmissionCode(sub.ID)
 	if err != nil {
-		return fmt.Errorf("fetching submission code: %w", err)
+		return err
 	}
 
-	// Determine category and file paths
-	category := determineCategory(problemDetail.TopicTags)
-	difficulty := problemDetail.Difficulty
-	extension := getFileExtension(result.Data.SubmissionDetails.Lang)
+	// FIX: Use sub.Lang directly
+	extension := getFileExtension(sub.Lang) // FIX ✔✔✔
 
-	// Create directory structure
-	// Structure: Category/Difficulty/ID.TitleSlug/
-	problemFolder := fmt.Sprintf("%s.%s", problemDetail.QuestionFrontendID, sanitizeFilename(sub.TitleSlug))
-	dirPath := filepath.Join(category, difficulty, problemFolder)
-	if err := os.MkdirAll(dirPath, 0755); err != nil {
-		return fmt.Errorf("creating directory: %w", err)
-	}
+	folder := fmt.Sprintf("%s.%s", details.QuestionFrontendID, sanitizeFilename(sub.TitleSlug))
+	path := filepath.Join(determineCategory(details.TopicTags), details.Difficulty, folder)
 
-	// Create filename (inside the problem folder)
-	filename := fmt.Sprintf("%s.%s.%s",
-		problemDetail.QuestionFrontendID,
+	os.MkdirAll(path, 0755)
+
+	file := filepath.Join(path, fmt.Sprintf("%s.%s.%s",
+		details.QuestionFrontendID,
 		sanitizeFilename(sub.TitleSlug),
-		extension)
+		extension))
 
-	filePath := filepath.Join(dirPath, filename)
+	os.WriteFile(file, []byte(code), 0644)
+	fmt.Println("   ✓ Wrote:", file)
 
-	// Write solution file
-	if err := os.WriteFile(filePath, []byte(code), 0644); err != nil {
-		return fmt.Errorf("writing solution file: %w", err)
-	}
-	fmt.Printf("  ✓ Created: %s\n", filePath)
+	readmePath := filepath.Join(path, "README.md")
+	createProblemREADME(readmePath, details, sub.Lang)
 
-	// Create problem README
-	readmePath := filepath.Join(dirPath, "README.md")
-
-	if err := createProblemREADME(readmePath, problemDetail, sub.Lang); err != nil {
-		return fmt.Errorf("creating problem README: %w", err)
-	}
-	fmt.Printf("  ✓ Created: %s\n", readmePath)
-
-	// Update sync database
 	syncDB.Synced[fmt.Sprintf("%d", sub.ID)] = SyncEntry{
 		SubmissionID: sub.ID,
-		ProblemID:    problemDetail.QuestionFrontendID,
-		Title:        problemDetail.Title,
-		TitleSlug:    problemDetail.TitleSlug,
-		Difficulty:   difficulty,
-		Category:     category,
+		ProblemID:    details.QuestionFrontendID,
+		Title:        details.Title,
+		TitleSlug:    details.TitleSlug,
+		Difficulty:   details.Difficulty,
+		Category:     determineCategory(details.TopicTags),
 		Timestamp:    time.Now(),
 	}
 
@@ -557,14 +235,9 @@ func fetchProblemDetail(titleSlug string) (ProblemDetail, error) {
 		"variables": {"titleSlug": "%s"}
 	}`, titleSlug)
 
-	req, err := http.NewRequest("POST", graphqlEndpoint, strings.NewReader(query))
-	if err != nil {
-		return ProblemDetail{}, err
-	}
-
+	req, _ := http.NewRequest("POST", graphqlEndpoint, strings.NewReader(query))
 	req.Header.Set("Content-Type", "application/json")
-	req.Header.Set("Cookie", fmt.Sprintf("LEETCODE_SESSION=%s", sessionToken))
-	req.Header.Set("User-Agent", "Mozilla/5.0")
+	req.Header.Set("Cookie", "LEETCODE_SESSION="+sessionToken)
 
 	client := &http.Client{Timeout: 30 * time.Second}
 	resp, err := client.Do(req)
@@ -573,37 +246,22 @@ func fetchProblemDetail(titleSlug string) (ProblemDetail, error) {
 	}
 	defer resp.Body.Close()
 
-	if resp.StatusCode != 200 {
-		body, _ := io.ReadAll(resp.Body)
-		return ProblemDetail{}, fmt.Errorf("problem detail query returned status %d: %s", resp.StatusCode, string(body))
-	}
-
 	var result GraphQLResponse
-	if err := json.NewDecoder(resp.Body).Decode(&result); err != nil {
-		return ProblemDetail{}, err
-	}
+	json.NewDecoder(resp.Body).Decode(&result)
 
 	return result.Data.Question, nil
 }
 
-func fetchSubmissionCode(submissionID int) (string, error) {
-	// GraphQL query for submission details (updated to new schema)
+func fetchSubmissionCode(id int) (string, error) {
 	query := fmt.Sprintf(`{
-		"query": "query submissionDetails($submissionId: Int!) { submissionDetails(submissionId: $submissionId) { code runtimeDisplay memoryDisplay lang } }",
+		"query": "query submissionDetails($submissionId: Int!) { submissionDetails(submissionId: $submissionId) { code lang } }",
 		"variables": {"submissionId": %d}
-	}`, submissionID)
+	}`, id)
 
-	req, err := http.NewRequest("POST", graphqlEndpoint, strings.NewReader(query))
-	if err != nil {
-		return "", err
-	}
-
-	// Set required headers for GraphQL API
+	req, _ := http.NewRequest("POST", graphqlEndpoint, strings.NewReader(query))
 	req.Header.Set("Content-Type", "application/json")
 	req.Header.Set("Cookie", fmt.Sprintf("LEETCODE_SESSION=%s; csrftoken=%s", sessionToken, csrfToken))
 	req.Header.Set("x-csrftoken", csrfToken)
-	req.Header.Set("Referer", "https://leetcode.com")
-	req.Header.Set("User-Agent", "Mozilla/5.0")
 
 	client := &http.Client{Timeout: 30 * time.Second}
 	resp, err := client.Do(req)
@@ -612,89 +270,66 @@ func fetchSubmissionCode(submissionID int) (string, error) {
 	}
 	defer resp.Body.Close()
 
-	// Debug: Log response status
-	fmt.Printf("   [DEBUG] GraphQL API status: %d\n", resp.StatusCode)
-
-	// Read response body for debugging
-	body, err := io.ReadAll(resp.Body)
-	if err != nil {
-		return "", err
-	}
-
-	if resp.StatusCode != 200 {
-		bodyStr := string(body)
-		fmt.Printf("   [DEBUG] Response body: %s\n", bodyStr)
-		if strings.Contains(bodyStr, "Cannot query field") || strings.Contains(bodyStr, "must have a sub selection") {
-			fmt.Println("   [DEBUG] Possible GraphQL schema change detected. Please verify the submissionDetails query.")
-		}
-		return "", fmt.Errorf("GraphQL API returned status %d", resp.StatusCode)
-	}
+	body, _ := io.ReadAll(resp.Body)
 
 	var result struct {
 		Data struct {
 			SubmissionDetails struct {
-				Code           string `json:"code"`
-				RuntimeDisplay string `json:"runtimeDisplay"`
-				MemoryDisplay  string `json:"memoryDisplay"`
-				Lang           string `json:"lang"`
+				Code string `json:"code"`
+				Lang string `json:"lang"`
 			} `json:"submissionDetails"`
 		} `json:"data"`
 	}
 
-	if err := json.Unmarshal(body, &result); err != nil {
-		fmt.Printf("   [DEBUG] Failed to parse response: %s\n", string(body))
-		return "", err
+	json.Unmarshal(body, &result)
+	return result.Data.SubmissionDetails.Code, nil
+}
+
+func fetchRecentSubmissions() ([]Submission, error) {
+	url := submissionsEndpoint + "?offset=0&limit=10"
+	req, _ := http.NewRequest("GET", url, nil)
+	req.Header.Set("Cookie", "LEETCODE_SESSION="+sessionToken)
+
+	client := &http.Client{Timeout: 30 * time.Second}
+	resp, err := client.Do(req)
+	if err != nil {
+		return nil, err
 	}
+	defer resp.Body.Close()
 
-	code := result.Data.SubmissionDetails.Code
-
-	// Debug: Log code length and metadata
-	fmt.Printf("   [DEBUG] Code length: %d chars\n", len(code))
-	if len(code) > 0 {
-		fmt.Printf("   [DEBUG] Runtime: %s, Memory: %s, Lang: %s\n",
-			result.Data.SubmissionDetails.RuntimeDisplay,
-			result.Data.SubmissionDetails.MemoryDisplay,
-			result.Data.SubmissionDetails.Lang)
+	var data struct {
+		SubmissionsData []Submission `json:"submissions_dump"`
 	}
-
-	return code, nil
+	json.NewDecoder(resp.Body).Decode(&data)
+	return data.SubmissionsData, nil
 }
 
 func determineCategory(tags []TopicTag) string {
 	if len(tags) == 0 {
 		return "Miscellaneous"
 	}
-
-	// Try to find a mapped category
-	for _, tag := range tags {
-		if category, exists := config.CategoryMappings[tag.Slug]; exists {
-			return category
-		}
+	if c, ok := config.CategoryMappings[tags[0].Slug]; ok {
+		return c
 	}
-
-	// Use first tag as fallback
-	return capitalizeFirst(tags[0].Name)
+	return capitalize(tags[0].Name)
 }
 
 func getFileExtension(lang string) string {
 	lang = strings.ToLower(lang)
-	if ext, exists := config.LanguageExtensions[lang]; exists {
+	if ext, ok := config.LanguageExtensions[lang]; ok {
 		return ext
 	}
 	return "txt"
 }
 
-func sanitizeFilename(name string) string {
-	// Remove special characters and replace spaces/hyphens with hyphens
-	reg := regexp.MustCompile(`[^a-zA-Z0-9\-]+`)
-	name = reg.ReplaceAllString(name, "-")
-	name = strings.Trim(name, "-")
-	return strings.ToLower(name)
+func sanitizeFilename(s string) string {
+	reg := regexp.MustCompile(`[^a-zA-Z0-9-]+`)
+	return strings.Trim(reg.ReplaceAllString(s, "-"), "-")
 }
 
-func capitalizeFirst(s string) string {
-	if s == "" {
-		return ""
+func capitalize(s string) string {
+	if len(s) == 0 {
+		return s
 	}
 	return strings.ToUpper(s[:1]) + s[1:]
 }
