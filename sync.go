@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+	"net/url"
 	"os"
 	"os/exec"
 	"path/filepath"
@@ -745,9 +746,16 @@ func updateMasterREADME() error {
 		entry := entries[i]
 		diffEmoji := getDifficultyEmoji(entry.Difficulty)
 
-		problemPath := fmt.Sprintf("./%s/%s/%s.%s",
-			entry.Category, entry.Difficulty, entry.ProblemID, entry.TitleSlug)
+		// Proper GitHub path (spaces and slashes encoded)
+		problemPath := fmt.Sprintf(
+			"https://github.com/SohamDhotre/LeetCode/tree/main/%s/%s/%s.%s",
+			url.PathEscape(entry.Category),
+			url.PathEscape(entry.Difficulty),
+			url.PathEscape(entry.ProblemID),
+			url.PathEscape(entry.TitleSlug),
+		)
 
+		// Update markdown row: Title as a link, category plain text
 		sb.WriteString(fmt.Sprintf("| %s | [%s](%s) | %s %s | %s | %s |\n",
 			entry.ProblemID,
 			entry.Title,
@@ -755,7 +763,9 @@ func updateMasterREADME() error {
 			diffEmoji,
 			entry.Difficulty,
 			entry.Category,
-			entry.Timestamp.Format("2006-01-02")))
+			entry.Timestamp.Format("2006-01-02"),
+		))
+
 	}
 
 	sb.WriteString("\n---\n\n")
