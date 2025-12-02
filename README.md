@@ -4,10 +4,10 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 ## 📊 Progress Statistics
 
-**Total Problems Solved:** 7
+**Total Problems Solved:** 8
 
 - 🟢 Easy: 1
-- 🟡 Medium: 5
+- 🟡 Medium: 6
 - 🔴 Hard: 1
 
 ## 📂 Solutions by Category
@@ -15,13 +15,14 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 ### Hash Table (1)
 - Easy: 1 | Medium: 0 | Hard: 0
 
-### Linked List (6)
-- Easy: 0 | Medium: 5 | Hard: 1
+### Linked List (7)
+- Easy: 0 | Medium: 6 | Hard: 1
 
 ## 🕒 Recent Submissions
 
 | # | Problem | Difficulty | Category | Date |
 |---|---------|------------|----------|------|
+| 148 | [Sort List](https://github.com/SohamDhotre/LeetCode/tree/main/Linked%20List/Medium/148.sort-list) | 🟡 Medium | Linked List | 2025-12-02 |
 | 86 | [Partition List](https://github.com/SohamDhotre/LeetCode/tree/main/Linked%20List/Medium/86.partition-list) | 🟡 Medium | Linked List | 2025-12-02 |
 | 160 | [Intersection of Two Linked Lists](https://github.com/SohamDhotre/LeetCode/tree/main/Hash%20Table/Easy/160.intersection-of-two-linked-lists) | 🟢 Easy | Hash Table | 2025-11-30 |
 | 19 | [Remove Nth Node From End of List](https://github.com/SohamDhotre/LeetCode/tree/main/Linked%20List/Medium/19.remove-nth-node-from-end-of-list) | 🟡 Medium | Linked List | 2025-11-30 |
