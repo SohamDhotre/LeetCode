@@ -53,7 +53,16 @@
       "difficulty": "Hard",
       "category": "Linked List",
       "timestamp": "2025-11-30T14:28:42.682323473+05:30"
+    },
+    "1845170671": {
+      "submission_id": 1845170671,
+      "problem_id": "86",
+      "title": "Partition List",
+      "title_slug": "partition-list",
+      "difficulty": "Medium",
+      "category": "Linked List",
+      "timestamp": "2025-12-02T21:56:33.066142661+05:30"
     }
   },
-  "last_synced": "2025-11-30T14:28:45.000175376+05:30"
+  "last_synced": "2025-12-02T21:56:33.070259731+05:30"
 }
