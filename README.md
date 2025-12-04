@@ -4,10 +4,10 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 ## 📊 Progress Statistics
 
-**Total Problems Solved:** 9
+**Total Problems Solved:** 10
 
 - 🟢 Easy: 1
-- 🟡 Medium: 7
+- 🟡 Medium: 8
 - 🔴 Hard: 1
 
 ## 📂 Solutions by Category
@@ -15,13 +15,14 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 ### Hash Table (1)
 - Easy: 1 | Medium: 0 | Hard: 0
 
-### Linked List (8)
-- Easy: 0 | Medium: 7 | Hard: 1
+### Linked List (9)
+- Easy: 0 | Medium: 8 | Hard: 1
 
 ## 🕒 Recent Submissions
 
 | # | Problem | Difficulty | Category | Date |
 |---|---------|------------|----------|------|
+| 1721 | [Swapping Nodes in a Linked List](https://github.com/SohamDhotre/LeetCode/tree/main/Linked%20List/Medium/1721.swapping-nodes-in-a-linked-list) | 🟡 Medium | Linked List | 2025-12-04 |
 | 237 | [Delete Node in a Linked List](https://github.com/SohamDhotre/LeetCode/tree/main/Linked%20List/Medium/237.delete-node-in-a-linked-list) | 🟡 Medium | Linked List | 2025-12-02 |
 | 148 | [Sort List](https://github.com/SohamDhotre/LeetCode/tree/main/Linked%20List/Medium/148.sort-list) | 🟡 Medium | Linked List | 2025-12-02 |
 | 86 | [Partition List](https://github.com/SohamDhotre/LeetCode/tree/main/Linked%20List/Medium/86.partition-list) | 🟡 Medium | Linked List | 2025-12-02 |
