@@ -4,9 +4,9 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 ## 📊 Progress Statistics
 
-**Total Problems Solved:** 14
+**Total Problems Solved:** 15
 
-- 🟢 Easy: 2
+- 🟢 Easy: 3
 - 🟡 Medium: 11
 - 🔴 Hard: 1
 
@@ -18,13 +18,14 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 ### Linked List (12)
 - Easy: 0 | Medium: 11 | Hard: 1
 
-### Strings (1)
-- Easy: 1 | Medium: 0 | Hard: 0
+### Strings (2)
+- Easy: 2 | Medium: 0 | Hard: 0
 
 ## 🕒 Recent Submissions
 
 | # | Problem | Difficulty | Category | Date |
 |---|---------|------------|----------|------|
+| 20 | [Valid Parentheses](https://github.com/SohamDhotre/LeetCode/tree/main/Strings/Easy/20.valid-parentheses) | 🟢 Easy | Strings | 2025-12-06 |
 | 20 | [Valid Parentheses](https://github.com/SohamDhotre/LeetCode/tree/main/Strings/Easy/20.valid-parentheses) | 🟢 Easy | Strings | 2025-12-06 |
 | 143 | [Reorder List](https://github.com/SohamDhotre/LeetCode/tree/main/Linked%20List/Medium/143.reorder-list) | 🟡 Medium | Linked List | 2025-12-06 |
 | 143 | [Reorder List](https://github.com/SohamDhotre/LeetCode/tree/main/Linked%20List/Medium/143.reorder-list) | 🟡 Medium | Linked List | 2025-12-06 |
@@ -34,7 +35,6 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 | 148 | [Sort List](https://github.com/SohamDhotre/LeetCode/tree/main/Linked%20List/Medium/148.sort-list) | 🟡 Medium | Linked List | 2025-12-02 |
 | 86 | [Partition List](https://github.com/SohamDhotre/LeetCode/tree/main/Linked%20List/Medium/86.partition-list) | 🟡 Medium | Linked List | 2025-12-02 |
 | 160 | [Intersection of Two Linked Lists](https://github.com/SohamDhotre/LeetCode/tree/main/Hash%20Table/Easy/160.intersection-of-two-linked-lists) | 🟢 Easy | Hash Table | 2025-11-30 |
-| 19 | [Remove Nth Node From End of List](https://github.com/SohamDhotre/LeetCode/tree/main/Linked%20List/Medium/19.remove-nth-node-from-end-of-list) | 🟡 Medium | Linked List | 2025-11-30 |
 
 ---
 
