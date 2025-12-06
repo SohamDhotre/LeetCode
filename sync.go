@@ -253,12 +253,22 @@ func performSync() {
 		submissionKey := fmt.Sprintf("%d", sub.ID)
 
 		// Already synced
-		if _, exists := syncDB.Synced[submissionKey]; exists {
-			skippedCount++
-			fmt.Printf("   ⏭️  [%d/%d] Skipping (already synced): %s (ID: %d)\n",
-				i+1, len(acceptedSubmissions), sub.Title, sub.ID)
-			continue
-		}
+		// Check by problem slug instead of submission ID
+		alreadySynced := false
+		for _, entry := range syncDB.Synced {
+   		if entry.TitleSlug == sub.TitleSlug {
+        		alreadySynced = true
+        		break
+    		}
+	}
+
+	if alreadySynced {
+    		skippedCount++
+    		fmt.Printf("  ⏭️  [%d/%d] Skipping (already synced problem): %s (Slug: %s)\n",
+        		i+1, len(acceptedSubmissions), sub.Title, sub.TitleSlug)
+    		continue
+	}
+
 
 		// Previously failed?
 		failedEntry, hadFailed := syncDB.Failed[submissionKey]
