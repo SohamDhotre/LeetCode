@@ -876,15 +876,11 @@ func gitAddCommitPush(count int) error {
 		return fmt.Errorf("git setup failed: %w", err)
 	}
 
-	gitUserName := os.Getenv("GIT_USER_NAME")
-	gitUserEmail := os.Getenv("GIT_USER_EMAIL")
+	gitUserName := "SohamDhotre"
+	gitUserEmail := "sohamsoham16@gmail.com"
 
-	if gitUserName == "" {
-		gitUserName = "LeetCode Sync Bot"
-	}
-	if gitUserEmail == "" {
-		gitUserEmail = "leetcode-sync@example.com"
-	}
+	exec.Command("git", "config", "user.name", gitUserName).Run()
+	exec.Command("git", "config", "user.email", gitUserEmail).Run()
 
 	configCmd := exec.Command("git", "config", "user.name", gitUserName)
 	if err := configCmd.Run(); err != nil {
