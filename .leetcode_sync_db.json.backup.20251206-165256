@@ -1,0 +1,51 @@
+{
+  "synced": {
+    "1848040501": {
+      "submission_id": 1848040501,
+      "problem_id": "143",
+      "title": "Reorder List",
+      "title_slug": "reorder-list",
+      "difficulty": "Medium",
+      "category": "LinkedList",
+      "timestamp": "2024-11-15T10:30:00Z"
+    },
+    "1848046091": {
+      "submission_id": 1848046091,
+      "problem_id": "143",
+      "title": "Reorder List",
+      "title_slug": "reorder-list",
+      "difficulty": "Medium",
+      "category": "LinkedList",
+      "timestamp": "2024-11-15T11:45:00Z"
+    },
+    "1847123456": {
+      "submission_id": 1847123456,
+      "problem_id": "20",
+      "title": "Valid Parentheses",
+      "title_slug": "valid-parentheses",
+      "difficulty": "Easy",
+      "category": "Stack",
+      "timestamp": "2024-11-14T09:00:00Z"
+    },
+    "1847234567": {
+      "submission_id": 1847234567,
+      "problem_id": "20",
+      "title": "Valid Parentheses",
+      "title_slug": "valid-parentheses",
+      "difficulty": "Easy",
+      "category": "Stack",
+      "timestamp": "2024-11-14T10:15:00Z"
+    },
+    "1846345678": {
+      "submission_id": 1846345678,
+      "problem_id": "1",
+      "title": "Two Sum",
+      "title_slug": "two-sum",
+      "difficulty": "Easy",
+      "category": "Array",
+      "timestamp": "2024-11-13T14:20:00Z"
+    }
+  },
+  "failed": {},
+  "last_synced": "2024-11-15T12:00:00Z"
+}

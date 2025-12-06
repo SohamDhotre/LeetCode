@@ -250,31 +250,31 @@ func performSync() {
 	retriedFixed := 0
 
 	for i, sub := range acceptedSubmissions {
-		submissionKey := fmt.Sprintf("%d", sub.ID)
+		// Use TitleSlug as the key for deduplication
+		problemKey := sub.TitleSlug
 
-		// Already synced
-		// Check by problem slug instead of submission ID
-		alreadySynced := false
-		for _, entry := range syncDB.Synced {
-   		if entry.TitleSlug == sub.TitleSlug {
-        		alreadySynced = true
-        		break
-    		}
-	}
+		// Check if already synced by TitleSlug
+		if existingEntry, alreadySynced := syncDB.Synced[problemKey]; alreadySynced {
+			// Check if this is a newer submission
+			if sub.ID > existingEntry.SubmissionID {
+				fmt.Printf("   🔄 [%d/%d] Updating existing problem with newer submission: %s\n",
+					i+1, len(acceptedSubmissions), sub.Title)
+				fmt.Printf("      Old Submission ID: %d → New Submission ID: %d\n",
+					existingEntry.SubmissionID, sub.ID)
+				// Continue to process and update
+			} else {
+				skippedCount++
+				fmt.Printf("   ⏭️  [%d/%d] Skipping (already synced): %s (Slug: %s)\n",
+					i+1, len(acceptedSubmissions), sub.Title, sub.TitleSlug)
+				continue
+			}
+		}
 
-	if alreadySynced {
-    		skippedCount++
-    		fmt.Printf("  ⏭️  [%d/%d] Skipping (already synced problem): %s (Slug: %s)\n",
-        		i+1, len(acceptedSubmissions), sub.Title, sub.TitleSlug)
-    		continue
-	}
-
-
-		// Previously failed?
-		failedEntry, hadFailed := syncDB.Failed[submissionKey]
+		// Previously failed? (now using TitleSlug)
+		failedEntry, hadFailed := syncDB.Failed[problemKey]
 		if hadFailed && failedEntry.RetryCount >= maxRetriesPerSubmission {
-			fmt.Printf("   ⏭️  [%d/%d] Skipping (max retries reached): %s (ID: %d). Last error: %s\n",
-				i+1, len(acceptedSubmissions), sub.Title, sub.ID, failedEntry.LastError)
+			fmt.Printf("   ⏭️  [%d/%d] Skipping (max retries reached): %s (Slug: %s). Last error: %s\n",
+				i+1, len(acceptedSubmissions), sub.Title, sub.TitleSlug, failedEntry.LastError)
 			continue
 		}
 
@@ -302,14 +302,14 @@ func performSync() {
 			failedEntry.RetryCount++
 			failedEntry.LastError = err.Error()
 			failedEntry.LastTried = now
-			syncDB.Failed[submissionKey] = failedEntry
+			syncDB.Failed[problemKey] = failedEntry
 			continue
 		}
 
 		// Success
 		if hadFailed {
 			retriedFixed++
-			delete(syncDB.Failed, submissionKey)
+			delete(syncDB.Failed, problemKey)
 		}
 		newCount++
 		fmt.Printf("   ✅ Successfully processed!\n")
@@ -593,8 +593,8 @@ func processSubmission(sub Submission) error {
 	}
 	fmt.Printf("  ✓ Created: %s\n", readmePath)
 
-	// Update sync DB
-	syncDB.Synced[fmt.Sprintf("%d", sub.ID)] = SyncEntry{
+	// Update sync DB - use TitleSlug as key for proper deduplication
+	syncDB.Synced[problemDetail.TitleSlug] = SyncEntry{
 		SubmissionID: sub.ID,
 		ProblemID:    problemDetail.QuestionFrontendID,
 		Title:        problemDetail.Title,
