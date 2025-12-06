@@ -4,9 +4,9 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 ## 📊 Progress Statistics
 
-**Total Problems Solved:** 4
+**Total Problems Solved:** 5
 
-- 🟢 Easy: 2
+- 🟢 Easy: 3
 - 🟡 Medium: 2
 - 🔴 Hard: 0
 
@@ -21,10 +21,14 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 ### Strings (1)
 - Easy: 1 | Medium: 0 | Hard: 0
 
+### Two Pointers (1)
+- Easy: 1 | Medium: 0 | Hard: 0
+
 ## 🕒 Recent Submissions
 
 | # | Problem | Difficulty | Category | Date |
 |---|---------|------------|----------|------|
+| 844 | [Backspace String Compare](https://github.com/SohamDhotre/LeetCode/tree/main/Two%20Pointers/Easy/844.backspace-string-compare) | 🟢 Easy | Two Pointers | 2025-12-06 |
 | 725 | [Split Linked List in Parts](https://github.com/SohamDhotre/LeetCode/tree/main/Linked%20List/Medium/725.split-linked-list-in-parts) | 🟡 Medium | Linked List | 2025-12-06 |
 | 143 | [Reorder List](https://github.com/SohamDhotre/LeetCode/tree/main/Linked%20List/Medium/143.reorder-list) | 🟡 Medium | Linked List | 2025-12-06 |
 | 20 | [Valid Parentheses](https://github.com/SohamDhotre/LeetCode/tree/main/Strings/Easy/20.valid-parentheses) | 🟢 Easy | Strings | 2025-12-06 |
