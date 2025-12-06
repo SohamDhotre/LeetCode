@@ -116,7 +116,16 @@
       "difficulty": "Medium",
       "category": "Linked List",
       "timestamp": "2025-12-06T10:08:16.86012821+05:30"
+    },
+    "1848143711": {
+      "submission_id": 1848143711,
+      "problem_id": "20",
+      "title": "Valid Parentheses",
+      "title_slug": "valid-parentheses",
+      "difficulty": "Easy",
+      "category": "Strings",
+      "timestamp": "2025-12-06T12:59:44.063683023+05:30"
     }
   },
-  "last_synced": "2025-12-06T10:08:16.868249901+05:30"
+  "last_synced": "2025-12-06T12:59:44.074408153+05:30"
 }
