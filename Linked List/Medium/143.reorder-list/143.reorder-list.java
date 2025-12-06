@@ -10,37 +10,38 @@
  */
 class Solution {
     public void reorderList(ListNode head) {
-        List<ListNode>list=getList(head);
-        int left=1, right=list.size()-1;
-        ListNode cur=head;
-        while(left<=right){
-            cur.next=list.get(right--);
-            cur=cur.next;
-            cur.next=null;
-            // print(head, list.size(), "inside while");
-            cur.next=list.get(left++);
-            cur=cur.next;
-            cur.next=null;
+        ListNode slow=head, fast=head;
+        // find the mid node
+        while(fast!=null && fast.next!=null){
+            slow=slow.next;
+            fast=fast.next.next;
         }
-        // print(head, list.size(), "outside while");
-    }
-    void print(ListNode head, int len, String status){
-        ListNode cur=head;
-        int count=len;
-        System.out.print(status+" List: ");
-        while(count>0){
-            System.out.print(cur.val+"->");
-            count--;
-        }
-        System.out.println(cur.val+"null");
-    }
-    List<ListNode> getList(ListNode head){
-        List<ListNode>list=new ArrayList<>();
-        ListNode cur=head;
+        // get the right part
+        ListNode right=slow.next;
+        slow.next=null;
+        // rev the right list
+        ListNode prev=null;
+        ListNode cur=right;
         while(cur!=null){
-            list.add(cur);
-            cur=cur.next;
+            ListNode temp=cur.next;
+            cur.next=prev;
+            prev=cur;
+            cur=temp;
         }
-        return list;
+        // take one node from each list and link them alternatively
+        ListNode revHead=prev;
+        ListNode leftHead=head;
+        while(revHead!=null){
+            ListNode nextLeft=leftHead.next;
+            ListNode nextRight=revHead.next;
+            
+            leftHead.next=revHead;
+            revHead.next=nextLeft;
+
+            leftHead=nextLeft;
+            revHead=nextRight;
+        }
+
+        //return the same head
     }
 }

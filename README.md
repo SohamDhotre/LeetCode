@@ -4,10 +4,10 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 ## 📊 Progress Statistics
 
-**Total Problems Solved:** 12
+**Total Problems Solved:** 13
 
 - 🟢 Easy: 1
-- 🟡 Medium: 10
+- 🟡 Medium: 11
 - 🔴 Hard: 1
 
 ## 📂 Solutions by Category
@@ -15,13 +15,14 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 ### Hash Table (1)
 - Easy: 1 | Medium: 0 | Hard: 0
 
-### Linked List (11)
-- Easy: 0 | Medium: 10 | Hard: 1
+### Linked List (12)
+- Easy: 0 | Medium: 11 | Hard: 1
 
 ## 🕒 Recent Submissions
 
 | # | Problem | Difficulty | Category | Date |
 |---|---------|------------|----------|------|
+| 143 | [Reorder List](https://github.com/SohamDhotre/LeetCode/tree/main/Linked%20List/Medium/143.reorder-list) | 🟡 Medium | Linked List | 2025-12-06 |
 | 143 | [Reorder List](https://github.com/SohamDhotre/LeetCode/tree/main/Linked%20List/Medium/143.reorder-list) | 🟡 Medium | Linked List | 2025-12-06 |
 | 725 | [Split Linked List in Parts](https://github.com/SohamDhotre/LeetCode/tree/main/Linked%20List/Medium/725.split-linked-list-in-parts) | 🟡 Medium | Linked List | 2025-12-06 |
 | 1721 | [Swapping Nodes in a Linked List](https://github.com/SohamDhotre/LeetCode/tree/main/Linked%20List/Medium/1721.swapping-nodes-in-a-linked-list) | 🟡 Medium | Linked List | 2025-12-04 |
@@ -31,7 +32,6 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 | 160 | [Intersection of Two Linked Lists](https://github.com/SohamDhotre/LeetCode/tree/main/Hash%20Table/Easy/160.intersection-of-two-linked-lists) | 🟢 Easy | Hash Table | 2025-11-30 |
 | 19 | [Remove Nth Node From End of List](https://github.com/SohamDhotre/LeetCode/tree/main/Linked%20List/Medium/19.remove-nth-node-from-end-of-list) | 🟡 Medium | Linked List | 2025-11-30 |
 | 430 | [Flatten a Multilevel Doubly Linked List](https://github.com/SohamDhotre/LeetCode/tree/main/Linked%20List/Medium/430.flatten-a-multilevel-doubly-linked-list) | 🟡 Medium | Linked List | 2025-11-30 |
-| 2 | [Add Two Numbers](https://github.com/SohamDhotre/LeetCode/tree/main/Linked%20List/Medium/2.add-two-numbers) | 🟡 Medium | Linked List | 2025-11-30 |
 
 ---
 
