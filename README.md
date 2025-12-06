@@ -4,37 +4,31 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 ## 📊 Progress Statistics
 
-**Total Problems Solved:** 15
+**Total Problems Solved:** 4
 
-- 🟢 Easy: 3
-- 🟡 Medium: 11
-- 🔴 Hard: 1
+- 🟢 Easy: 2
+- 🟡 Medium: 2
+- 🔴 Hard: 0
 
 ## 📂 Solutions by Category
 
-### Hash Table (1)
+### Arrays (1)
 - Easy: 1 | Medium: 0 | Hard: 0
 
-### Linked List (12)
-- Easy: 0 | Medium: 11 | Hard: 1
+### Linked List (2)
+- Easy: 0 | Medium: 2 | Hard: 0
 
-### Strings (2)
-- Easy: 2 | Medium: 0 | Hard: 0
+### Strings (1)
+- Easy: 1 | Medium: 0 | Hard: 0
 
 ## 🕒 Recent Submissions
 
 | # | Problem | Difficulty | Category | Date |
 |---|---------|------------|----------|------|
-| 20 | [Valid Parentheses](https://github.com/SohamDhotre/LeetCode/tree/main/Strings/Easy/20.valid-parentheses) | 🟢 Easy | Strings | 2025-12-06 |
-| 20 | [Valid Parentheses](https://github.com/SohamDhotre/LeetCode/tree/main/Strings/Easy/20.valid-parentheses) | 🟢 Easy | Strings | 2025-12-06 |
-| 143 | [Reorder List](https://github.com/SohamDhotre/LeetCode/tree/main/Linked%20List/Medium/143.reorder-list) | 🟡 Medium | Linked List | 2025-12-06 |
-| 143 | [Reorder List](https://github.com/SohamDhotre/LeetCode/tree/main/Linked%20List/Medium/143.reorder-list) | 🟡 Medium | Linked List | 2025-12-06 |
 | 725 | [Split Linked List in Parts](https://github.com/SohamDhotre/LeetCode/tree/main/Linked%20List/Medium/725.split-linked-list-in-parts) | 🟡 Medium | Linked List | 2025-12-06 |
-| 1721 | [Swapping Nodes in a Linked List](https://github.com/SohamDhotre/LeetCode/tree/main/Linked%20List/Medium/1721.swapping-nodes-in-a-linked-list) | 🟡 Medium | Linked List | 2025-12-04 |
-| 237 | [Delete Node in a Linked List](https://github.com/SohamDhotre/LeetCode/tree/main/Linked%20List/Medium/237.delete-node-in-a-linked-list) | 🟡 Medium | Linked List | 2025-12-02 |
-| 148 | [Sort List](https://github.com/SohamDhotre/LeetCode/tree/main/Linked%20List/Medium/148.sort-list) | 🟡 Medium | Linked List | 2025-12-02 |
-| 86 | [Partition List](https://github.com/SohamDhotre/LeetCode/tree/main/Linked%20List/Medium/86.partition-list) | 🟡 Medium | Linked List | 2025-12-02 |
-| 160 | [Intersection of Two Linked Lists](https://github.com/SohamDhotre/LeetCode/tree/main/Hash%20Table/Easy/160.intersection-of-two-linked-lists) | 🟢 Easy | Hash Table | 2025-11-30 |
+| 143 | [Reorder List](https://github.com/SohamDhotre/LeetCode/tree/main/Linked%20List/Medium/143.reorder-list) | 🟡 Medium | Linked List | 2025-12-06 |
+| 20 | [Valid Parentheses](https://github.com/SohamDhotre/LeetCode/tree/main/Strings/Easy/20.valid-parentheses) | 🟢 Easy | Strings | 2025-12-06 |
+| 496 | [Next Greater Element I](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Easy/496.next-greater-element-i) | 🟢 Easy | Arrays | 2025-12-06 |
 
 ---
 
