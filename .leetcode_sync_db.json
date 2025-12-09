@@ -9,6 +9,15 @@
       "category": "Two Pointers",
       "timestamp": "2025-12-06T18:26:05.538397074+05:30"
     },
+    "daily-temperatures": {
+      "submission_id": 1851263767,
+      "problem_id": "739",
+      "title": "Daily Temperatures",
+      "title_slug": "daily-temperatures",
+      "difficulty": "Medium",
+      "category": "Arrays",
+      "timestamp": "2025-12-09T21:57:31.099695122+05:30"
+    },
     "next-greater-element-i": {
       "submission_id": 1848283121,
       "problem_id": "496",
@@ -46,5 +55,5 @@
       "timestamp": "2025-12-06T17:22:07.5551786+05:30"
     }
   },
-  "last_synced": "2025-12-06T18:26:05.541563432+05:30"
+  "last_synced": "2025-12-09T21:57:31.106743233+05:30"
 }
