@@ -27,6 +27,15 @@
       "category": "Arrays",
       "timestamp": "2025-12-06T17:22:07.2723717+05:30"
     },
+    "online-stock-span": {
+      "submission_id": 1851614164,
+      "problem_id": "901",
+      "title": "Online Stock Span",
+      "title_slug": "online-stock-span",
+      "difficulty": "Medium",
+      "category": "Stack",
+      "timestamp": "2025-12-10T09:04:04.874879769+05:30"
+    },
     "reorder-list": {
       "submission_id": 1848046091,
       "problem_id": "143",
@@ -55,5 +64,5 @@
       "timestamp": "2025-12-06T17:22:07.5551786+05:30"
     }
   },
-  "last_synced": "2025-12-09T21:57:31.106743233+05:30"
+  "last_synced": "2025-12-10T09:04:04.883895318+05:30"
 }

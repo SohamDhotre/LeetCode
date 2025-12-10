@@ -4,10 +4,10 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 ## 📊 Progress Statistics
 
-**Total Problems Solved:** 6
+**Total Problems Solved:** 7
 
 - 🟢 Easy: 3
-- 🟡 Medium: 3
+- 🟡 Medium: 4
 - 🔴 Hard: 0
 
 ## 📂 Solutions by Category
@@ -17,6 +17,9 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 ### Linked List (2)
 - Easy: 0 | Medium: 2 | Hard: 0
+
+### Stack (1)
+- Easy: 0 | Medium: 1 | Hard: 0
 
 ### Strings (1)
 - Easy: 1 | Medium: 0 | Hard: 0
@@ -28,6 +31,7 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 | # | Problem | Difficulty | Category | Date |
 |---|---------|------------|----------|------|
+| 901 | [Online Stock Span](https://github.com/SohamDhotre/LeetCode/tree/main/Stack/Medium/901.online-stock-span) | 🟡 Medium | Stack | 2025-12-10 |
 | 739 | [Daily Temperatures](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Medium/739.daily-temperatures) | 🟡 Medium | Arrays | 2025-12-09 |
 | 844 | [Backspace String Compare](https://github.com/SohamDhotre/LeetCode/tree/main/Two%20Pointers/Easy/844.backspace-string-compare) | 🟢 Easy | Two Pointers | 2025-12-06 |
 | 725 | [Split Linked List in Parts](https://github.com/SohamDhotre/LeetCode/tree/main/Linked%20List/Medium/725.split-linked-list-in-parts) | 🟡 Medium | Linked List | 2025-12-06 |
