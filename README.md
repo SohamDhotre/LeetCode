@@ -4,16 +4,16 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 ## 📊 Progress Statistics
 
-**Total Problems Solved:** 7
+**Total Problems Solved:** 8
 
 - 🟢 Easy: 3
-- 🟡 Medium: 4
+- 🟡 Medium: 5
 - 🔴 Hard: 0
 
 ## 📂 Solutions by Category
 
-### Arrays (2)
-- Easy: 1 | Medium: 1 | Hard: 0
+### Arrays (3)
+- Easy: 1 | Medium: 2 | Hard: 0
 
 ### Linked List (2)
 - Easy: 0 | Medium: 2 | Hard: 0
@@ -31,6 +31,7 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 | # | Problem | Difficulty | Category | Date |
 |---|---------|------------|----------|------|
+| 503 | [Next Greater Element II](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Medium/503.next-greater-element-ii) | 🟡 Medium | Arrays | 2025-12-10 |
 | 901 | [Online Stock Span](https://github.com/SohamDhotre/LeetCode/tree/main/Stack/Medium/901.online-stock-span) | 🟡 Medium | Stack | 2025-12-10 |
 | 739 | [Daily Temperatures](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Medium/739.daily-temperatures) | 🟡 Medium | Arrays | 2025-12-09 |
 | 844 | [Backspace String Compare](https://github.com/SohamDhotre/LeetCode/tree/main/Two%20Pointers/Easy/844.backspace-string-compare) | 🟢 Easy | Two Pointers | 2025-12-06 |
