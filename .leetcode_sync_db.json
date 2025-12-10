@@ -28,13 +28,13 @@
       "timestamp": "2025-12-06T17:22:07.2723717+05:30"
     },
     "next-greater-element-ii": {
-      "submission_id": 1851624792,
+      "submission_id": 1851647876,
       "problem_id": "503",
       "title": "Next Greater Element II",
       "title_slug": "next-greater-element-ii",
       "difficulty": "Medium",
       "category": "Arrays",
-      "timestamp": "2025-12-10T09:22:15.471080667+05:30"
+      "timestamp": "2025-12-10T09:56:00.770807814+05:30"
     },
     "online-stock-span": {
       "submission_id": 1851614164,
@@ -73,5 +73,5 @@
       "timestamp": "2025-12-06T17:22:07.5551786+05:30"
     }
   },
-  "last_synced": "2025-12-10T09:22:15.480453266+05:30"
+  "last_synced": "2025-12-10T09:56:00.778318137+05:30"
 }
