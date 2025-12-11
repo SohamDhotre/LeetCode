@@ -45,6 +45,15 @@
       "category": "Stack",
       "timestamp": "2025-12-10T09:04:04.874879769+05:30"
     },
+    "remove-k-digits": {
+      "submission_id": 1852958591,
+      "problem_id": "402",
+      "title": "Remove K Digits",
+      "title_slug": "remove-k-digits",
+      "difficulty": "Medium",
+      "category": "Strings",
+      "timestamp": "2025-12-11T19:44:12.662825564+05:30"
+    },
     "reorder-list": {
       "submission_id": 1848046091,
       "problem_id": "143",
@@ -73,5 +82,5 @@
       "timestamp": "2025-12-06T17:22:07.5551786+05:30"
     }
   },
-  "last_synced": "2025-12-10T09:56:00.778318137+05:30"
+  "last_synced": "2025-12-11T19:44:12.671466702+05:30"
 }
