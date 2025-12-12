@@ -719,6 +719,7 @@ func updateMasterREADME() error {
 	totalProblems := totalEasy + totalMedium + totalHard
 
 	var sb strings.Builder
+	sb.WriteString("LeetCode profile : [SohamDhotre](https://leetcode.com/u/sohamsoham16/)\n\n")
 	sb.WriteString("# 🚀 LeetCode Solutions\n\n")
 	sb.WriteString("A collection of my LeetCode solutions, automatically synced from LeetCode.\n\n")
 	sb.WriteString("## 📊 Progress Statistics\n\n")
