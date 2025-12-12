@@ -1,4 +1,4 @@
-LeetCode profile : [Soham Dhotre](https://leetcode.com/u/sohamsoham16/)
+# LeetCode profile : [Soham Dhotre](https://leetcode.com/u/sohamsoham16/)
 
 # 🚀 LeetCode Solutions
 
