@@ -4,16 +4,16 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 ## 📊 Progress Statistics
 
-**Total Problems Solved:** 9
+**Total Problems Solved:** 10
 
 - 🟢 Easy: 3
-- 🟡 Medium: 6
+- 🟡 Medium: 7
 - 🔴 Hard: 0
 
 ## 📂 Solutions by Category
 
-### Arrays (3)
-- Easy: 1 | Medium: 2 | Hard: 0
+### Arrays (4)
+- Easy: 1 | Medium: 3 | Hard: 0
 
 ### Linked List (2)
 - Easy: 0 | Medium: 2 | Hard: 0
@@ -31,6 +31,7 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 | # | Problem | Difficulty | Category | Date |
 |---|---------|------------|----------|------|
+| 581 | [Shortest Unsorted Continuous Subarray](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Medium/581.shortest-unsorted-continuous-subarray) | 🟡 Medium | Arrays | 2025-12-12 |
 | 402 | [Remove K Digits](https://github.com/SohamDhotre/LeetCode/tree/main/Strings/Medium/402.remove-k-digits) | 🟡 Medium | Strings | 2025-12-12 |
 | 503 | [Next Greater Element II](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Medium/503.next-greater-element-ii) | 🟡 Medium | Arrays | 2025-12-10 |
 | 901 | [Online Stock Span](https://github.com/SohamDhotre/LeetCode/tree/main/Stack/Medium/901.online-stock-span) | 🟡 Medium | Stack | 2025-12-10 |

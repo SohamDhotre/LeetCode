@@ -63,6 +63,15 @@
       "category": "Linked List",
       "timestamp": "2025-12-06T17:22:07.8580197+05:30"
     },
+    "shortest-unsorted-continuous-subarray": {
+      "submission_id": 1853839492,
+      "problem_id": "581",
+      "title": "Shortest Unsorted Continuous Subarray",
+      "title_slug": "shortest-unsorted-continuous-subarray",
+      "difficulty": "Medium",
+      "category": "Arrays",
+      "timestamp": "2025-12-12T21:08:16.016927699+05:30"
+    },
     "split-linked-list-in-parts": {
       "submission_id": 1848029809,
       "problem_id": "725",
@@ -82,5 +91,5 @@
       "timestamp": "2025-12-06T17:22:07.5551786+05:30"
     }
   },
-  "last_synced": "2025-12-12T20:37:55.537680966+05:30"
+  "last_synced": "2025-12-12T21:08:16.022378948+05:30"
 }
