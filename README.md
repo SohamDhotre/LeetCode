@@ -31,7 +31,7 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 | # | Problem | Difficulty | Category | Date |
 |---|---------|------------|----------|------|
-| 402 | [Remove K Digits](https://github.com/SohamDhotre/LeetCode/tree/main/Strings/Medium/402.remove-k-digits) | 🟡 Medium | Strings | 2025-12-11 |
+| 402 | [Remove K Digits](https://github.com/SohamDhotre/LeetCode/tree/main/Strings/Medium/402.remove-k-digits) | 🟡 Medium | Strings | 2025-12-12 |
 | 503 | [Next Greater Element II](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Medium/503.next-greater-element-ii) | 🟡 Medium | Arrays | 2025-12-10 |
 | 901 | [Online Stock Span](https://github.com/SohamDhotre/LeetCode/tree/main/Stack/Medium/901.online-stock-span) | 🟡 Medium | Stack | 2025-12-10 |
 | 739 | [Daily Temperatures](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Medium/739.daily-temperatures) | 🟡 Medium | Arrays | 2025-12-09 |
