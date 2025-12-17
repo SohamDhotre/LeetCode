@@ -18,6 +18,24 @@
       "category": "Arrays",
       "timestamp": "2025-12-09T21:57:31.099695122+05:30"
     },
+    "implement-stack-using-queues": {
+      "submission_id": 1858037905,
+      "problem_id": "225",
+      "title": "Implement Stack using Queues",
+      "title_slug": "implement-stack-using-queues",
+      "difficulty": "Easy",
+      "category": "Stack",
+      "timestamp": "2025-12-17T21:03:49.393112203+05:30"
+    },
+    "largest-rectangle-in-histogram": {
+      "submission_id": 1857318847,
+      "problem_id": "84",
+      "title": "Largest Rectangle in Histogram",
+      "title_slug": "largest-rectangle-in-histogram",
+      "difficulty": "Hard",
+      "category": "Arrays",
+      "timestamp": "2025-12-17T21:03:51.607742632+05:30"
+    },
     "next-greater-element-i": {
       "submission_id": 1848283121,
       "problem_id": "496",
@@ -35,6 +53,15 @@
       "difficulty": "Medium",
       "category": "Arrays",
       "timestamp": "2025-12-10T09:56:00.770807814+05:30"
+    },
+    "number-of-recent-calls": {
+      "submission_id": 1858004384,
+      "problem_id": "933",
+      "title": "Number of Recent Calls",
+      "title_slug": "number-of-recent-calls",
+      "difficulty": "Easy",
+      "category": "Design",
+      "timestamp": "2025-12-17T21:03:51.268316813+05:30"
     },
     "online-stock-span": {
       "submission_id": 1851614164,
@@ -91,5 +118,5 @@
       "timestamp": "2025-12-06T17:22:07.5551786+05:30"
     }
   },
-  "last_synced": "2025-12-12T21:08:16.022378948+05:30"
+  "last_synced": "2025-12-17T21:03:51.61183822+05:30"
 }
