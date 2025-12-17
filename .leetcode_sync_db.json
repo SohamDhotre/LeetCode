@@ -18,6 +18,15 @@
       "category": "Two Pointers",
       "timestamp": "2025-12-06T18:26:05.538397074+05:30"
     },
+    "course-schedule": {
+      "submission_id": 1858235100,
+      "problem_id": "207",
+      "title": "Course Schedule",
+      "title_slug": "course-schedule",
+      "difficulty": "Medium",
+      "category": "DFS",
+      "timestamp": "2025-12-17T22:34:29.336991664+05:30"
+    },
     "daily-temperatures": {
       "submission_id": 1851263767,
       "problem_id": "739",
@@ -127,5 +136,5 @@
       "timestamp": "2025-12-06T17:22:07.5551786+05:30"
     }
   },
-  "last_synced": "2025-12-17T21:44:07.384099985+05:30"
+  "last_synced": "2025-12-17T22:34:29.341031325+05:30"
 }
