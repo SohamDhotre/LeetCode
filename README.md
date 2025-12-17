@@ -6,16 +6,16 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 ## 📊 Progress Statistics
 
-**Total Problems Solved:** 13
+**Total Problems Solved:** 14
 
 - 🟢 Easy: 5
-- 🟡 Medium: 7
+- 🟡 Medium: 8
 - 🔴 Hard: 1
 
 ## 📂 Solutions by Category
 
-### Arrays (5)
-- Easy: 1 | Medium: 3 | Hard: 1
+### Arrays (6)
+- Easy: 1 | Medium: 4 | Hard: 1
 
 ### Design (1)
 - Easy: 1 | Medium: 0 | Hard: 0
@@ -36,6 +36,7 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 | # | Problem | Difficulty | Category | Date |
 |---|---------|------------|----------|------|
+| 542 | [01 Matrix](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Medium/542.01-matrix) | 🟡 Medium | Arrays | 2025-12-17 |
 | 84 | [Largest Rectangle in Histogram](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Hard/84.largest-rectangle-in-histogram) | 🔴 Hard | Arrays | 2025-12-17 |
 | 933 | [Number of Recent Calls](https://github.com/SohamDhotre/LeetCode/tree/main/Design/Easy/933.number-of-recent-calls) | 🟢 Easy | Design | 2025-12-17 |
 | 225 | [Implement Stack using Queues](https://github.com/SohamDhotre/LeetCode/tree/main/Stack/Easy/225.implement-stack-using-queues) | 🟢 Easy | Stack | 2025-12-17 |
@@ -45,7 +46,6 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 | 901 | [Online Stock Span](https://github.com/SohamDhotre/LeetCode/tree/main/Stack/Medium/901.online-stock-span) | 🟡 Medium | Stack | 2025-12-10 |
 | 739 | [Daily Temperatures](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Medium/739.daily-temperatures) | 🟡 Medium | Arrays | 2025-12-09 |
 | 844 | [Backspace String Compare](https://github.com/SohamDhotre/LeetCode/tree/main/Two%20Pointers/Easy/844.backspace-string-compare) | 🟢 Easy | Two Pointers | 2025-12-06 |
-| 725 | [Split Linked List in Parts](https://github.com/SohamDhotre/LeetCode/tree/main/Linked%20List/Medium/725.split-linked-list-in-parts) | 🟡 Medium | Linked List | 2025-12-06 |
 
 ---
 
