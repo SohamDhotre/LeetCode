@@ -6,10 +6,10 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 ## 📊 Progress Statistics
 
-**Total Problems Solved:** 15
+**Total Problems Solved:** 16
 
 - 🟢 Easy: 5
-- 🟡 Medium: 9
+- 🟡 Medium: 10
 - 🔴 Hard: 1
 
 ## 📂 Solutions by Category
@@ -29,8 +29,8 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 ### Stack (2)
 - Easy: 1 | Medium: 1 | Hard: 0
 
-### Strings (2)
-- Easy: 1 | Medium: 1 | Hard: 0
+### Strings (3)
+- Easy: 1 | Medium: 2 | Hard: 0
 
 ### Two Pointers (1)
 - Easy: 1 | Medium: 0 | Hard: 0
@@ -39,6 +39,7 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 | # | Problem | Difficulty | Category | Date |
 |---|---------|------------|----------|------|
+| 2390 | [Removing Stars From a String](https://github.com/SohamDhotre/LeetCode/tree/main/Strings/Medium/2390.removing-stars-from-a-string) | 🟡 Medium | Strings | 2025-12-18 |
 | 207 | [Course Schedule](https://github.com/SohamDhotre/LeetCode/tree/main/DFS/Medium/207.course-schedule) | 🟡 Medium | DFS | 2025-12-17 |
 | 542 | [01 Matrix](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Medium/542.01-matrix) | 🟡 Medium | Arrays | 2025-12-17 |
 | 84 | [Largest Rectangle in Histogram](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Hard/84.largest-rectangle-in-histogram) | 🔴 Hard | Arrays | 2025-12-17 |
@@ -48,7 +49,6 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 | 402 | [Remove K Digits](https://github.com/SohamDhotre/LeetCode/tree/main/Strings/Medium/402.remove-k-digits) | 🟡 Medium | Strings | 2025-12-12 |
 | 503 | [Next Greater Element II](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Medium/503.next-greater-element-ii) | 🟡 Medium | Arrays | 2025-12-10 |
 | 901 | [Online Stock Span](https://github.com/SohamDhotre/LeetCode/tree/main/Stack/Medium/901.online-stock-span) | 🟡 Medium | Stack | 2025-12-10 |
-| 739 | [Daily Temperatures](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Medium/739.daily-temperatures) | 🟡 Medium | Arrays | 2025-12-09 |
 
 ---
 

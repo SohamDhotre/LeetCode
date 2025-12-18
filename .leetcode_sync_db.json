@@ -99,6 +99,15 @@
       "category": "Strings",
       "timestamp": "2025-12-12T20:37:55.531109748+05:30"
     },
+    "removing-stars-from-a-string": {
+      "submission_id": 1858862798,
+      "problem_id": "2390",
+      "title": "Removing Stars From a String",
+      "title_slug": "removing-stars-from-a-string",
+      "difficulty": "Medium",
+      "category": "Strings",
+      "timestamp": "2025-12-18T21:31:26.023133567+05:30"
+    },
     "reorder-list": {
       "submission_id": 1848046091,
       "problem_id": "143",
@@ -136,5 +145,5 @@
       "timestamp": "2025-12-06T17:22:07.5551786+05:30"
     }
   },
-  "last_synced": "2025-12-17T22:34:29.341031325+05:30"
+  "last_synced": "2025-12-18T21:31:26.029562246+05:30"
 }
