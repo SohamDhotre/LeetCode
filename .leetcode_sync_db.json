@@ -117,6 +117,15 @@
       "category": "Linked List",
       "timestamp": "2025-12-06T17:22:07.8580197+05:30"
     },
+    "rotting-oranges": {
+      "submission_id": 1872244481,
+      "problem_id": "994",
+      "title": "Rotting Oranges",
+      "title_slug": "rotting-oranges",
+      "difficulty": "Medium",
+      "category": "Arrays",
+      "timestamp": "2026-01-02T22:06:03.2621129+05:30"
+    },
     "shortest-unsorted-continuous-subarray": {
       "submission_id": 1853839492,
       "problem_id": "581",
@@ -154,5 +163,5 @@
       "timestamp": "2025-12-06T17:22:07.5551786+05:30"
     }
   },
-  "last_synced": "2025-12-18T22:21:58.391889721+05:30"
+  "last_synced": "2026-01-02T22:06:03.2643186+05:30"
 }
