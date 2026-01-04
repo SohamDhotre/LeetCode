@@ -6,9 +6,9 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 ## 📊 Progress Statistics
 
-**Total Problems Solved:** 23
+**Total Problems Solved:** 24
 
-- 🟢 Easy: 8
+- 🟢 Easy: 9
 - 🟡 Medium: 13
 - 🔴 Hard: 2
 
@@ -32,8 +32,8 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 ### Strings (3)
 - Easy: 1 | Medium: 2 | Hard: 0
 
-### Trees (2)
-- Easy: 0 | Medium: 2 | Hard: 0
+### Trees (3)
+- Easy: 1 | Medium: 2 | Hard: 0
 
 ### Two Pointers (1)
 - Easy: 1 | Medium: 0 | Hard: 0
@@ -42,6 +42,7 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 | # | Problem | Difficulty | Category | Date |
 |---|---------|------------|----------|------|
+| 101 | [Symmetric Tree](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Easy/101.symmetric-tree) | 🟢 Easy | Trees | 2026-01-04 |
 | 145 | [Binary Tree Postorder Traversal](https://github.com/SohamDhotre/LeetCode/tree/main/Stack/Easy/145.binary-tree-postorder-traversal) | 🟢 Easy | Stack | 2026-01-04 |
 | 144 | [Binary Tree Preorder Traversal](https://github.com/SohamDhotre/LeetCode/tree/main/Stack/Easy/144.binary-tree-preorder-traversal) | 🟢 Easy | Stack | 2026-01-04 |
 | 98 | [Validate Binary Search Tree](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Medium/98.validate-binary-search-tree) | 🟡 Medium | Trees | 2026-01-04 |
@@ -51,7 +52,6 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 | 239 | [Sliding Window Maximum](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Hard/239.sliding-window-maximum) | 🔴 Hard | Arrays | 2025-12-18 |
 | 2390 | [Removing Stars From a String](https://github.com/SohamDhotre/LeetCode/tree/main/Strings/Medium/2390.removing-stars-from-a-string) | 🟡 Medium | Strings | 2025-12-18 |
 | 207 | [Course Schedule](https://github.com/SohamDhotre/LeetCode/tree/main/DFS/Medium/207.course-schedule) | 🟡 Medium | DFS | 2025-12-17 |
-| 542 | [01 Matrix](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Medium/542.01-matrix) | 🟡 Medium | Arrays | 2025-12-17 |
 
 ---
 
