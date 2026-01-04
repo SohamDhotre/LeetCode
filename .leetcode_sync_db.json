@@ -135,6 +135,15 @@
       "category": "Stack",
       "timestamp": "2025-12-10T09:04:04.874879769+05:30"
     },
+    "path-sum": {
+      "submission_id": 1874430474,
+      "problem_id": "112",
+      "title": "Path Sum",
+      "title_slug": "path-sum",
+      "difficulty": "Easy",
+      "category": "Trees",
+      "timestamp": "2026-01-04T22:15:51.4585991+05:30"
+    },
     "remove-k-digits": {
       "submission_id": 1852961166,
       "problem_id": "402",
@@ -226,5 +235,5 @@
       "timestamp": "2026-01-04T19:08:17.1621736+05:30"
     }
   },
-  "last_synced": "2026-01-04T21:55:41.6931122+05:30"
+  "last_synced": "2026-01-04T22:15:51.4619677+05:30"
 }

@@ -6,9 +6,9 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 ## 📊 Progress Statistics
 
-**Total Problems Solved:** 25
+**Total Problems Solved:** 26
 
-- 🟢 Easy: 10
+- 🟢 Easy: 11
 - 🟡 Medium: 13
 - 🔴 Hard: 2
 
@@ -32,8 +32,8 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 ### Strings (3)
 - Easy: 1 | Medium: 2 | Hard: 0
 
-### Trees (4)
-- Easy: 2 | Medium: 2 | Hard: 0
+### Trees (5)
+- Easy: 3 | Medium: 2 | Hard: 0
 
 ### Two Pointers (1)
 - Easy: 1 | Medium: 0 | Hard: 0
@@ -42,6 +42,7 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 | # | Problem | Difficulty | Category | Date |
 |---|---------|------------|----------|------|
+| 112 | [Path Sum](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Easy/112.path-sum) | 🟢 Easy | Trees | 2026-01-04 |
 | 226 | [Invert Binary Tree](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Easy/226.invert-binary-tree) | 🟢 Easy | Trees | 2026-01-04 |
 | 101 | [Symmetric Tree](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Easy/101.symmetric-tree) | 🟢 Easy | Trees | 2026-01-04 |
 | 145 | [Binary Tree Postorder Traversal](https://github.com/SohamDhotre/LeetCode/tree/main/Stack/Easy/145.binary-tree-postorder-traversal) | 🟢 Easy | Stack | 2026-01-04 |
@@ -51,7 +52,6 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 | 94 | [Binary Tree Inorder Traversal](https://github.com/SohamDhotre/LeetCode/tree/main/Stack/Easy/94.binary-tree-inorder-traversal) | 🟢 Easy | Stack | 2026-01-04 |
 | 994 | [Rotting Oranges](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Medium/994.rotting-oranges) | 🟡 Medium | Arrays | 2026-01-02 |
 | 239 | [Sliding Window Maximum](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Hard/239.sliding-window-maximum) | 🔴 Hard | Arrays | 2025-12-18 |
-| 2390 | [Removing Stars From a String](https://github.com/SohamDhotre/LeetCode/tree/main/Strings/Medium/2390.removing-stars-from-a-string) | 🟡 Medium | Strings | 2025-12-18 |
 
 ---
 
