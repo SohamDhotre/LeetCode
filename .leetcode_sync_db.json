@@ -72,6 +72,15 @@
       "category": "Stack",
       "timestamp": "2025-12-17T21:03:49.393112203+05:30"
     },
+    "invert-binary-tree": {
+      "submission_id": 1874403947,
+      "problem_id": "226",
+      "title": "Invert Binary Tree",
+      "title_slug": "invert-binary-tree",
+      "difficulty": "Easy",
+      "category": "Trees",
+      "timestamp": "2026-01-04T21:55:41.6905528+05:30"
+    },
     "largest-rectangle-in-histogram": {
       "submission_id": 1857318847,
       "problem_id": "84",
@@ -217,5 +226,5 @@
       "timestamp": "2026-01-04T19:08:17.1621736+05:30"
     }
   },
-  "last_synced": "2026-01-04T21:45:34.1399223+05:30"
+  "last_synced": "2026-01-04T21:55:41.6931122+05:30"
 }
