@@ -6,9 +6,9 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 ## 📊 Progress Statistics
 
-**Total Problems Solved:** 22
+**Total Problems Solved:** 23
 
-- 🟢 Easy: 7
+- 🟢 Easy: 8
 - 🟡 Medium: 13
 - 🔴 Hard: 2
 
@@ -26,8 +26,8 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 ### Linked List (2)
 - Easy: 0 | Medium: 2 | Hard: 0
 
-### Stack (4)
-- Easy: 3 | Medium: 1 | Hard: 0
+### Stack (5)
+- Easy: 4 | Medium: 1 | Hard: 0
 
 ### Strings (3)
 - Easy: 1 | Medium: 2 | Hard: 0
@@ -42,6 +42,7 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 | # | Problem | Difficulty | Category | Date |
 |---|---------|------------|----------|------|
+| 145 | [Binary Tree Postorder Traversal](https://github.com/SohamDhotre/LeetCode/tree/main/Stack/Easy/145.binary-tree-postorder-traversal) | 🟢 Easy | Stack | 2026-01-04 |
 | 144 | [Binary Tree Preorder Traversal](https://github.com/SohamDhotre/LeetCode/tree/main/Stack/Easy/144.binary-tree-preorder-traversal) | 🟢 Easy | Stack | 2026-01-04 |
 | 98 | [Validate Binary Search Tree](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Medium/98.validate-binary-search-tree) | 🟡 Medium | Trees | 2026-01-04 |
 | 236 | [Lowest Common Ancestor of a Binary Tree](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Medium/236.lowest-common-ancestor-of-a-binary-tree) | 🟡 Medium | Trees | 2026-01-04 |
@@ -51,7 +52,6 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 | 2390 | [Removing Stars From a String](https://github.com/SohamDhotre/LeetCode/tree/main/Strings/Medium/2390.removing-stars-from-a-string) | 🟡 Medium | Strings | 2025-12-18 |
 | 207 | [Course Schedule](https://github.com/SohamDhotre/LeetCode/tree/main/DFS/Medium/207.course-schedule) | 🟡 Medium | DFS | 2025-12-17 |
 | 542 | [01 Matrix](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Medium/542.01-matrix) | 🟡 Medium | Arrays | 2025-12-17 |
-| 84 | [Largest Rectangle in Histogram](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Hard/84.largest-rectangle-in-histogram) | 🔴 Hard | Arrays | 2025-12-17 |
 
 ---
 

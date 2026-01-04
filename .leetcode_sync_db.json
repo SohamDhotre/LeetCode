@@ -27,6 +27,15 @@
       "category": "Stack",
       "timestamp": "2026-01-04T18:48:06.6658448+05:30"
     },
+    "binary-tree-postorder-traversal": {
+      "submission_id": 1874344440,
+      "problem_id": "145",
+      "title": "Binary Tree Postorder Traversal",
+      "title_slug": "binary-tree-postorder-traversal",
+      "difficulty": "Easy",
+      "category": "Stack",
+      "timestamp": "2026-01-04T20:55:17.5632578+05:30"
+    },
     "binary-tree-preorder-traversal": {
       "submission_id": 1874333126,
       "problem_id": "144",
@@ -199,5 +208,5 @@
       "timestamp": "2026-01-04T19:08:17.1621736+05:30"
     }
   },
-  "last_synced": "2026-01-04T20:45:09.8624535+05:30"
+  "last_synced": "2026-01-04T20:55:17.5669946+05:30"
 }
