@@ -6,9 +6,9 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 ## 📊 Progress Statistics
 
-**Total Problems Solved:** 18
+**Total Problems Solved:** 19
 
-- 🟢 Easy: 5
+- 🟢 Easy: 6
 - 🟡 Medium: 11
 - 🔴 Hard: 2
 
@@ -26,8 +26,8 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 ### Linked List (2)
 - Easy: 0 | Medium: 2 | Hard: 0
 
-### Stack (2)
-- Easy: 1 | Medium: 1 | Hard: 0
+### Stack (3)
+- Easy: 2 | Medium: 1 | Hard: 0
 
 ### Strings (3)
 - Easy: 1 | Medium: 2 | Hard: 0
@@ -39,6 +39,7 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 | # | Problem | Difficulty | Category | Date |
 |---|---------|------------|----------|------|
+| 94 | [Binary Tree Inorder Traversal](https://github.com/SohamDhotre/LeetCode/tree/main/Stack/Easy/94.binary-tree-inorder-traversal) | 🟢 Easy | Stack | 2026-01-04 |
 | 994 | [Rotting Oranges](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Medium/994.rotting-oranges) | 🟡 Medium | Arrays | 2026-01-02 |
 | 239 | [Sliding Window Maximum](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Hard/239.sliding-window-maximum) | 🔴 Hard | Arrays | 2025-12-18 |
 | 2390 | [Removing Stars From a String](https://github.com/SohamDhotre/LeetCode/tree/main/Strings/Medium/2390.removing-stars-from-a-string) | 🟡 Medium | Strings | 2025-12-18 |
@@ -48,7 +49,6 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 | 933 | [Number of Recent Calls](https://github.com/SohamDhotre/LeetCode/tree/main/Design/Easy/933.number-of-recent-calls) | 🟢 Easy | Design | 2025-12-17 |
 | 225 | [Implement Stack using Queues](https://github.com/SohamDhotre/LeetCode/tree/main/Stack/Easy/225.implement-stack-using-queues) | 🟢 Easy | Stack | 2025-12-17 |
 | 581 | [Shortest Unsorted Continuous Subarray](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Medium/581.shortest-unsorted-continuous-subarray) | 🟡 Medium | Arrays | 2025-12-12 |
-| 402 | [Remove K Digits](https://github.com/SohamDhotre/LeetCode/tree/main/Strings/Medium/402.remove-k-digits) | 🟡 Medium | Strings | 2025-12-12 |
 
 ---
 
