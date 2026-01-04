@@ -6,10 +6,10 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 ## 📊 Progress Statistics
 
-**Total Problems Solved:** 19
+**Total Problems Solved:** 20
 
 - 🟢 Easy: 6
-- 🟡 Medium: 11
+- 🟡 Medium: 12
 - 🔴 Hard: 2
 
 ## 📂 Solutions by Category
@@ -32,6 +32,9 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 ### Strings (3)
 - Easy: 1 | Medium: 2 | Hard: 0
 
+### Trees (1)
+- Easy: 0 | Medium: 1 | Hard: 0
+
 ### Two Pointers (1)
 - Easy: 1 | Medium: 0 | Hard: 0
 
@@ -39,6 +42,7 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 | # | Problem | Difficulty | Category | Date |
 |---|---------|------------|----------|------|
+| 236 | [Lowest Common Ancestor of a Binary Tree](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Medium/236.lowest-common-ancestor-of-a-binary-tree) | 🟡 Medium | Trees | 2026-01-04 |
 | 94 | [Binary Tree Inorder Traversal](https://github.com/SohamDhotre/LeetCode/tree/main/Stack/Easy/94.binary-tree-inorder-traversal) | 🟢 Easy | Stack | 2026-01-04 |
 | 994 | [Rotting Oranges](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Medium/994.rotting-oranges) | 🟡 Medium | Arrays | 2026-01-02 |
 | 239 | [Sliding Window Maximum](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Hard/239.sliding-window-maximum) | 🔴 Hard | Arrays | 2025-12-18 |
@@ -48,7 +52,6 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 | 84 | [Largest Rectangle in Histogram](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Hard/84.largest-rectangle-in-histogram) | 🔴 Hard | Arrays | 2025-12-17 |
 | 933 | [Number of Recent Calls](https://github.com/SohamDhotre/LeetCode/tree/main/Design/Easy/933.number-of-recent-calls) | 🟢 Easy | Design | 2025-12-17 |
 | 225 | [Implement Stack using Queues](https://github.com/SohamDhotre/LeetCode/tree/main/Stack/Easy/225.implement-stack-using-queues) | 🟢 Easy | Stack | 2025-12-17 |
-| 581 | [Shortest Unsorted Continuous Subarray](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Medium/581.shortest-unsorted-continuous-subarray) | 🟡 Medium | Arrays | 2025-12-12 |
 
 ---
 
