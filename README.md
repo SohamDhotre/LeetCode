@@ -6,9 +6,9 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 ## 📊 Progress Statistics
 
-**Total Problems Solved:** 26
+**Total Problems Solved:** 27
 
-- 🟢 Easy: 11
+- 🟢 Easy: 12
 - 🟡 Medium: 13
 - 🔴 Hard: 2
 
@@ -32,8 +32,8 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 ### Strings (3)
 - Easy: 1 | Medium: 2 | Hard: 0
 
-### Trees (5)
-- Easy: 3 | Medium: 2 | Hard: 0
+### Trees (6)
+- Easy: 4 | Medium: 2 | Hard: 0
 
 ### Two Pointers (1)
 - Easy: 1 | Medium: 0 | Hard: 0
@@ -42,6 +42,7 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 | # | Problem | Difficulty | Category | Date |
 |---|---------|------------|----------|------|
+| 617 | [Merge Two Binary Trees](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Easy/617.merge-two-binary-trees) | 🟢 Easy | Trees | 2026-01-05 |
 | 112 | [Path Sum](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Easy/112.path-sum) | 🟢 Easy | Trees | 2026-01-04 |
 | 226 | [Invert Binary Tree](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Easy/226.invert-binary-tree) | 🟢 Easy | Trees | 2026-01-04 |
 | 101 | [Symmetric Tree](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Easy/101.symmetric-tree) | 🟢 Easy | Trees | 2026-01-04 |
@@ -51,7 +52,6 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 | 236 | [Lowest Common Ancestor of a Binary Tree](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Medium/236.lowest-common-ancestor-of-a-binary-tree) | 🟡 Medium | Trees | 2026-01-04 |
 | 94 | [Binary Tree Inorder Traversal](https://github.com/SohamDhotre/LeetCode/tree/main/Stack/Easy/94.binary-tree-inorder-traversal) | 🟢 Easy | Stack | 2026-01-04 |
 | 994 | [Rotting Oranges](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Medium/994.rotting-oranges) | 🟡 Medium | Arrays | 2026-01-02 |
-| 239 | [Sliding Window Maximum](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Hard/239.sliding-window-maximum) | 🔴 Hard | Arrays | 2025-12-18 |
 
 ---
 

@@ -99,6 +99,15 @@
       "category": "Trees",
       "timestamp": "2026-01-04T18:58:13.0012439+05:30"
     },
+    "merge-two-binary-trees": {
+      "submission_id": 1875474971,
+      "problem_id": "617",
+      "title": "Merge Two Binary Trees",
+      "title_slug": "merge-two-binary-trees",
+      "difficulty": "Easy",
+      "category": "Trees",
+      "timestamp": "2026-01-05T21:42:31.6952966+05:30"
+    },
     "next-greater-element-i": {
       "submission_id": 1848283121,
       "problem_id": "496",
@@ -235,5 +244,5 @@
       "timestamp": "2026-01-04T19:08:17.1621736+05:30"
     }
   },
-  "last_synced": "2026-01-04T22:15:51.4619677+05:30"
+  "last_synced": "2026-01-05T21:42:31.7065344+05:30"
 }
