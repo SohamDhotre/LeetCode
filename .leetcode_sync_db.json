@@ -99,6 +99,15 @@
       "category": "Trees",
       "timestamp": "2026-01-04T18:58:13.0012439+05:30"
     },
+    "maximum-depth-of-binary-tree": {
+      "submission_id": 1875500673,
+      "problem_id": "104",
+      "title": "Maximum Depth of Binary Tree",
+      "title_slug": "maximum-depth-of-binary-tree",
+      "difficulty": "Easy",
+      "category": "Trees",
+      "timestamp": "2026-01-05T21:52:41.7425157+05:30"
+    },
     "merge-two-binary-trees": {
       "submission_id": 1875474971,
       "problem_id": "617",
@@ -152,6 +161,15 @@
       "difficulty": "Easy",
       "category": "Trees",
       "timestamp": "2026-01-04T22:15:51.4585991+05:30"
+    },
+    "range-sum-of-bst": {
+      "submission_id": 1875496055,
+      "problem_id": "938",
+      "title": "Range Sum of BST",
+      "title_slug": "range-sum-of-bst",
+      "difficulty": "Easy",
+      "category": "Trees",
+      "timestamp": "2026-01-05T21:52:42.1510688+05:30"
     },
     "remove-k-digits": {
       "submission_id": 1852961166,
@@ -244,5 +262,5 @@
       "timestamp": "2026-01-04T19:08:17.1621736+05:30"
     }
   },
-  "last_synced": "2026-01-05T21:42:31.7065344+05:30"
+  "last_synced": "2026-01-05T21:52:42.1554327+05:30"
 }

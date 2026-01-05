@@ -6,9 +6,9 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 ## 📊 Progress Statistics
 
-**Total Problems Solved:** 27
+**Total Problems Solved:** 29
 
-- 🟢 Easy: 12
+- 🟢 Easy: 14
 - 🟡 Medium: 13
 - 🔴 Hard: 2
 
@@ -32,8 +32,8 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 ### Strings (3)
 - Easy: 1 | Medium: 2 | Hard: 0
 
-### Trees (6)
-- Easy: 4 | Medium: 2 | Hard: 0
+### Trees (8)
+- Easy: 6 | Medium: 2 | Hard: 0
 
 ### Two Pointers (1)
 - Easy: 1 | Medium: 0 | Hard: 0
@@ -42,6 +42,8 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 | # | Problem | Difficulty | Category | Date |
 |---|---------|------------|----------|------|
+| 938 | [Range Sum of BST](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Easy/938.range-sum-of-bst) | 🟢 Easy | Trees | 2026-01-05 |
+| 104 | [Maximum Depth of Binary Tree](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Easy/104.maximum-depth-of-binary-tree) | 🟢 Easy | Trees | 2026-01-05 |
 | 617 | [Merge Two Binary Trees](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Easy/617.merge-two-binary-trees) | 🟢 Easy | Trees | 2026-01-05 |
 | 112 | [Path Sum](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Easy/112.path-sum) | 🟢 Easy | Trees | 2026-01-04 |
 | 226 | [Invert Binary Tree](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Easy/226.invert-binary-tree) | 🟢 Easy | Trees | 2026-01-04 |
@@ -50,8 +52,6 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 | 144 | [Binary Tree Preorder Traversal](https://github.com/SohamDhotre/LeetCode/tree/main/Stack/Easy/144.binary-tree-preorder-traversal) | 🟢 Easy | Stack | 2026-01-04 |
 | 98 | [Validate Binary Search Tree](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Medium/98.validate-binary-search-tree) | 🟡 Medium | Trees | 2026-01-04 |
 | 236 | [Lowest Common Ancestor of a Binary Tree](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Medium/236.lowest-common-ancestor-of-a-binary-tree) | 🟡 Medium | Trees | 2026-01-04 |
-| 94 | [Binary Tree Inorder Traversal](https://github.com/SohamDhotre/LeetCode/tree/main/Stack/Easy/94.binary-tree-inorder-traversal) | 🟢 Easy | Stack | 2026-01-04 |
-| 994 | [Rotting Oranges](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Medium/994.rotting-oranges) | 🟡 Medium | Arrays | 2026-01-02 |
 
 ---
 
