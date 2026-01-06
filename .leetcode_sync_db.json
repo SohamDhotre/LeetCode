@@ -54,6 +54,15 @@
       "category": "Stack",
       "timestamp": "2026-01-04T20:45:09.8553024+05:30"
     },
+    "binary-tree-zigzag-level-order-traversal": {
+      "submission_id": 1875963491,
+      "problem_id": "103",
+      "title": "Binary Tree Zigzag Level Order Traversal",
+      "title_slug": "binary-tree-zigzag-level-order-traversal",
+      "difficulty": "Medium",
+      "category": "Trees",
+      "timestamp": "2026-01-06T09:27:54.758109+05:30"
+    },
     "course-schedule": {
       "submission_id": 1858235100,
       "problem_id": "207",
@@ -280,5 +289,5 @@
       "timestamp": "2026-01-04T19:08:17.1621736+05:30"
     }
   },
-  "last_synced": "2026-01-06T08:47:39.2198196+05:30"
+  "last_synced": "2026-01-06T09:27:54.7639267+05:30"
 }

@@ -6,10 +6,10 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 ## 📊 Progress Statistics
 
-**Total Problems Solved:** 31
+**Total Problems Solved:** 32
 
 - 🟢 Easy: 15
-- 🟡 Medium: 14
+- 🟡 Medium: 15
 - 🔴 Hard: 2
 
 ## 📂 Solutions by Category
@@ -32,8 +32,8 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 ### Strings (3)
 - Easy: 1 | Medium: 2 | Hard: 0
 
-### Trees (10)
-- Easy: 7 | Medium: 3 | Hard: 0
+### Trees (11)
+- Easy: 7 | Medium: 4 | Hard: 0
 
 ### Two Pointers (1)
 - Easy: 1 | Medium: 0 | Hard: 0
@@ -42,6 +42,7 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 | # | Problem | Difficulty | Category | Date |
 |---|---------|------------|----------|------|
+| 103 | [Binary Tree Zigzag Level Order Traversal](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Medium/103.binary-tree-zigzag-level-order-traversal) | 🟡 Medium | Trees | 2026-01-06 |
 | 783 | [Minimum Distance Between BST Nodes](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Easy/783.minimum-distance-between-bst-nodes) | 🟢 Easy | Trees | 2026-01-06 |
 | 102 | [Binary Tree Level Order Traversal](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Medium/102.binary-tree-level-order-traversal) | 🟡 Medium | Trees | 2026-01-06 |
 | 938 | [Range Sum of BST](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Easy/938.range-sum-of-bst) | 🟢 Easy | Trees | 2026-01-05 |
@@ -51,7 +52,6 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 | 226 | [Invert Binary Tree](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Easy/226.invert-binary-tree) | 🟢 Easy | Trees | 2026-01-04 |
 | 101 | [Symmetric Tree](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Easy/101.symmetric-tree) | 🟢 Easy | Trees | 2026-01-04 |
 | 145 | [Binary Tree Postorder Traversal](https://github.com/SohamDhotre/LeetCode/tree/main/Stack/Easy/145.binary-tree-postorder-traversal) | 🟢 Easy | Stack | 2026-01-04 |
-| 144 | [Binary Tree Preorder Traversal](https://github.com/SohamDhotre/LeetCode/tree/main/Stack/Easy/144.binary-tree-preorder-traversal) | 🟢 Easy | Stack | 2026-01-04 |
 
 ---
 
