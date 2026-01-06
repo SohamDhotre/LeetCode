@@ -27,6 +27,15 @@
       "category": "Stack",
       "timestamp": "2026-01-04T18:48:06.6658448+05:30"
     },
+    "binary-tree-level-order-traversal": {
+      "submission_id": 1875936669,
+      "problem_id": "102",
+      "title": "Binary Tree Level Order Traversal",
+      "title_slug": "binary-tree-level-order-traversal",
+      "difficulty": "Medium",
+      "category": "Trees",
+      "timestamp": "2026-01-06T08:47:38.7952298+05:30"
+    },
     "binary-tree-postorder-traversal": {
       "submission_id": 1874344440,
       "problem_id": "145",
@@ -116,6 +125,15 @@
       "difficulty": "Easy",
       "category": "Trees",
       "timestamp": "2026-01-05T21:42:31.6952966+05:30"
+    },
+    "minimum-distance-between-bst-nodes": {
+      "submission_id": 1875535468,
+      "problem_id": "783",
+      "title": "Minimum Distance Between BST Nodes",
+      "title_slug": "minimum-distance-between-bst-nodes",
+      "difficulty": "Easy",
+      "category": "Trees",
+      "timestamp": "2026-01-06T08:47:39.2095659+05:30"
     },
     "next-greater-element-i": {
       "submission_id": 1848283121,
@@ -262,5 +280,5 @@
       "timestamp": "2026-01-04T19:08:17.1621736+05:30"
     }
   },
-  "last_synced": "2026-01-05T21:52:42.1554327+05:30"
+  "last_synced": "2026-01-06T08:47:39.2198196+05:30"
 }
