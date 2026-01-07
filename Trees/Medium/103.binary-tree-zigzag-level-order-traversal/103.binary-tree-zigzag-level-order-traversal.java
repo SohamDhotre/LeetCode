@@ -15,26 +15,24 @@
  */
 class Solution {
     public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
-        List<List<Integer>>res=new ArrayList<>();
-        if(root==null) return res;
-        Deque<TreeNode>q=new ArrayDeque<>();
-        boolean leftToRight=true;
+        List<List<Integer>> res = new ArrayList<>();
+        if (root == null) return res;
+        Deque<TreeNode> q = new ArrayDeque<>();
         q.offer(root);
-        while(!q.isEmpty()){
-            List<Integer>level=new ArrayList<>();
-            int size=q.size();
-            for(int i=0;i<size;i++){
-                TreeNode temp=q.poll();
-                if(leftToRight){
-                    level.add(temp.val);
-                } else {
-                    level.add(0, temp.val);
-                }
-                if(temp.left!=null) q.offer(temp.left);
-                if(temp.right!=null) q.offer(temp.right);
+        boolean leftToRight = true;
+        while (!q.isEmpty()) {
+            int size = q.size();
+            LinkedList<Integer> level = new LinkedList<>();
+            for (int i = 0; i < size; i++) {
+                TreeNode node = q.poll();
+                if (leftToRight) level.addLast(node.val);
+                else level.addFirst(node.val);
+
+                if (node.left != null) q.offer(node.left);
+                if (node.right != null) q.offer(node.right);
             }
             res.add(level);
-            leftToRight=!leftToRight;
+            leftToRight = !leftToRight;
         }
         return res;
     }
