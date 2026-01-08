@@ -99,6 +99,15 @@
       "category": "Arrays",
       "timestamp": "2025-12-09T21:57:31.099695122+05:30"
     },
+    "flatten-binary-tree-to-linked-list": {
+      "submission_id": 1878896566,
+      "problem_id": "114",
+      "title": "Flatten Binary Tree to Linked List",
+      "title_slug": "flatten-binary-tree-to-linked-list",
+      "difficulty": "Medium",
+      "category": "Linked List",
+      "timestamp": "2026-01-08T21:37:39.461032+05:30"
+    },
     "implement-stack-using-queues": {
       "submission_id": 1858037905,
       "problem_id": "225",
@@ -307,5 +316,5 @@
       "timestamp": "2026-01-04T19:08:17.1621736+05:30"
     }
   },
-  "last_synced": "2026-01-08T09:59:30.7010512+05:30"
+  "last_synced": "2026-01-08T21:37:39.49485+05:30"
 }
