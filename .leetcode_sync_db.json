@@ -63,6 +63,15 @@
       "category": "Trees",
       "timestamp": "2026-01-07T10:06:10.4244727+05:30"
     },
+    "construct-binary-tree-from-inorder-and-postorder-traversal": {
+      "submission_id": 1878289560,
+      "problem_id": "106",
+      "title": "Construct Binary Tree from Inorder and Postorder Traversal",
+      "title_slug": "construct-binary-tree-from-inorder-and-postorder-traversal",
+      "difficulty": "Medium",
+      "category": "Arrays",
+      "timestamp": "2026-01-08T09:59:30.6756453+05:30"
+    },
     "construct-binary-tree-from-preorder-and-inorder-traversal": {
       "submission_id": 1877152123,
       "problem_id": "105",
@@ -298,5 +307,5 @@
       "timestamp": "2026-01-04T19:08:17.1621736+05:30"
     }
   },
-  "last_synced": "2026-01-07T10:06:10.4261245+05:30"
+  "last_synced": "2026-01-08T09:59:30.7010512+05:30"
 }

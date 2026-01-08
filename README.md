@@ -6,16 +6,16 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 ## 📊 Progress Statistics
 
-**Total Problems Solved:** 33
+**Total Problems Solved:** 34
 
 - 🟢 Easy: 15
-- 🟡 Medium: 16
+- 🟡 Medium: 17
 - 🔴 Hard: 2
 
 ## 📂 Solutions by Category
 
-### Arrays (9)
-- Easy: 1 | Medium: 6 | Hard: 2
+### Arrays (10)
+- Easy: 1 | Medium: 7 | Hard: 2
 
 ### DFS (1)
 - Easy: 0 | Medium: 1 | Hard: 0
@@ -42,6 +42,7 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 | # | Problem | Difficulty | Category | Date |
 |---|---------|------------|----------|------|
+| 106 | [Construct Binary Tree from Inorder and Postorder Traversal](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Medium/106.construct-binary-tree-from-inorder-and-postorder-traversal) | 🟡 Medium | Arrays | 2026-01-08 |
 | 103 | [Binary Tree Zigzag Level Order Traversal](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Medium/103.binary-tree-zigzag-level-order-traversal) | 🟡 Medium | Trees | 2026-01-07 |
 | 105 | [Construct Binary Tree from Preorder and Inorder Traversal](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Medium/105.construct-binary-tree-from-preorder-and-inorder-traversal) | 🟡 Medium | Arrays | 2026-01-07 |
 | 783 | [Minimum Distance Between BST Nodes](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Easy/783.minimum-distance-between-bst-nodes) | 🟢 Easy | Trees | 2026-01-06 |
@@ -51,7 +52,6 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 | 617 | [Merge Two Binary Trees](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Easy/617.merge-two-binary-trees) | 🟢 Easy | Trees | 2026-01-05 |
 | 112 | [Path Sum](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Easy/112.path-sum) | 🟢 Easy | Trees | 2026-01-04 |
 | 226 | [Invert Binary Tree](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Easy/226.invert-binary-tree) | 🟢 Easy | Trees | 2026-01-04 |
-| 101 | [Symmetric Tree](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Easy/101.symmetric-tree) | 🟢 Easy | Trees | 2026-01-04 |
 
 ---
 
