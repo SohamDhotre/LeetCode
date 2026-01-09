@@ -23,17 +23,27 @@ class Node {
 
 class Solution {
     public Node connect(Node root) {
-        Deque<Node>q=new ArrayDeque<>();
-        if(root==null) return root;
-        q.offer(root);
-        while(!q.isEmpty()){
-            int size=q.size();
-            for(int i=0;i<size;i++){
-                Node temp=q.poll();
-                if(i<size-1) temp.next=q.peek();
-                if(temp.left!=null) q.offer(temp.left);
-                if(temp.right!=null) q.offer(temp.right);
+        Node currentLevelNode=root;
+        while(currentLevelNode!=null){
+            Node nextLevelStart=null, nextLevelTail=null;
+            while(currentLevelNode!=null){
+                if(currentLevelNode.left!=null){
+                    if(nextLevelStart==null) 
+                        nextLevelStart=currentLevelNode.left;
+                    else
+                        nextLevelTail.next= currentLevelNode.left;
+                    nextLevelTail=currentLevelNode.left;
+                }
+                if(currentLevelNode.right!=null){
+                    if(nextLevelStart==null) 
+                        nextLevelStart=currentLevelNode.right;
+                    else
+                        nextLevelTail.next= currentLevelNode.right;
+                    nextLevelTail=currentLevelNode.right;
+                }
+                currentLevelNode = currentLevelNode.next;
             }
+            currentLevelNode = nextLevelStart;
         }
         return root;
     }
