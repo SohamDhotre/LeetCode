@@ -225,6 +225,15 @@
       "category": "Linked List",
       "timestamp": "2026-01-09T22:39:44.4070443+05:30"
     },
+    "populating-next-right-pointers-in-each-node-ii": {
+      "submission_id": 1879985992,
+      "problem_id": "117",
+      "title": "Populating Next Right Pointers in Each Node II",
+      "title_slug": "populating-next-right-pointers-in-each-node-ii",
+      "difficulty": "Medium",
+      "category": "Linked List",
+      "timestamp": "2026-01-09T22:42:01.0913446+05:30"
+    },
     "range-sum-of-bst": {
       "submission_id": 1875496055,
       "problem_id": "938",
@@ -325,5 +334,5 @@
       "timestamp": "2026-01-04T19:08:17.1621736+05:30"
     }
   },
-  "last_synced": "2026-01-09T22:39:44.4086859+05:30"
+  "last_synced": "2026-01-09T22:42:01.0929845+05:30"
 }
