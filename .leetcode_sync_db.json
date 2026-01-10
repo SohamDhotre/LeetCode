@@ -54,6 +54,15 @@
       "category": "Stack",
       "timestamp": "2026-01-04T20:45:09.8553024+05:30"
     },
+    "binary-tree-right-side-view": {
+      "submission_id": 1880310264,
+      "problem_id": "199",
+      "title": "Binary Tree Right Side View",
+      "title_slug": "binary-tree-right-side-view",
+      "difficulty": "Medium",
+      "category": "Trees",
+      "timestamp": "2026-01-10T09:19:44.7667154+05:30"
+    },
     "binary-tree-zigzag-level-order-traversal": {
       "submission_id": 1875967122,
       "problem_id": "103",
@@ -334,5 +343,5 @@
       "timestamp": "2026-01-04T19:08:17.1621736+05:30"
     }
   },
-  "last_synced": "2026-01-09T22:42:01.0929845+05:30"
+  "last_synced": "2026-01-10T09:19:44.7705079+05:30"
 }
