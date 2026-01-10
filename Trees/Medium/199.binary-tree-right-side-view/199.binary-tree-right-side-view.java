@@ -21,9 +21,9 @@ class Solution {
         q.offer(root);
         while(!q.isEmpty()){
             int size=q.size();
+            list.add(q.peek().val);
             for(int i=0;i<size;i++){
                 TreeNode temp=q.poll();
-                if(i==0) list.add(temp.val);
                 if(temp.right!=null) q.offer(temp.right);
                 if(temp.left!=null) q.offer(temp.left);
             }

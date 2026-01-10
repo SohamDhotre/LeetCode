@@ -55,13 +55,13 @@
       "timestamp": "2026-01-04T20:45:09.8553024+05:30"
     },
     "binary-tree-right-side-view": {
-      "submission_id": 1880310264,
+      "submission_id": 1880311895,
       "problem_id": "199",
       "title": "Binary Tree Right Side View",
       "title_slug": "binary-tree-right-side-view",
       "difficulty": "Medium",
       "category": "Trees",
-      "timestamp": "2026-01-10T09:19:44.7667154+05:30"
+      "timestamp": "2026-01-10T10:07:56.3757668+05:30"
     },
     "binary-tree-zigzag-level-order-traversal": {
       "submission_id": 1875967122,
@@ -134,6 +134,15 @@
       "difficulty": "Easy",
       "category": "Trees",
       "timestamp": "2026-01-04T21:55:41.6905528+05:30"
+    },
+    "kth-smallest-element-in-a-bst": {
+      "submission_id": 1880337297,
+      "problem_id": "230",
+      "title": "Kth Smallest Element in a BST",
+      "title_slug": "kth-smallest-element-in-a-bst",
+      "difficulty": "Medium",
+      "category": "Trees",
+      "timestamp": "2026-01-10T10:07:55.9697218+05:30"
     },
     "largest-rectangle-in-histogram": {
       "submission_id": 1857318847,
@@ -343,5 +352,5 @@
       "timestamp": "2026-01-04T19:08:17.1621736+05:30"
     }
   },
-  "last_synced": "2026-01-10T09:19:44.7705079+05:30"
+  "last_synced": "2026-01-10T10:07:56.3802778+05:30"
 }
