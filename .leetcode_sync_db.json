@@ -108,6 +108,15 @@
       "category": "Arrays",
       "timestamp": "2025-12-09T21:57:31.099695122+05:30"
     },
+    "diameter-of-binary-tree": {
+      "submission_id": 1882511167,
+      "problem_id": "543",
+      "title": "Diameter of Binary Tree",
+      "title_slug": "diameter-of-binary-tree",
+      "difficulty": "Easy",
+      "category": "Trees",
+      "timestamp": "2026-01-12T12:26:53.0887736+05:30"
+    },
     "flatten-binary-tree-to-linked-list": {
       "submission_id": 1878896566,
       "problem_id": "114",
@@ -154,13 +163,13 @@
       "timestamp": "2025-12-17T21:03:51.607742632+05:30"
     },
     "lowest-common-ancestor-of-a-binary-tree": {
-      "submission_id": 1874234249,
+      "submission_id": 1881803284,
       "problem_id": "236",
       "title": "Lowest Common Ancestor of a Binary Tree",
       "title_slug": "lowest-common-ancestor-of-a-binary-tree",
       "difficulty": "Medium",
       "category": "Trees",
-      "timestamp": "2026-01-04T18:58:13.0012439+05:30"
+      "timestamp": "2026-01-12T12:26:53.3962283+05:30"
     },
     "maximum-depth-of-binary-tree": {
       "submission_id": 1875500673,
@@ -352,5 +361,5 @@
       "timestamp": "2026-01-04T19:08:17.1621736+05:30"
     }
   },
-  "last_synced": "2026-01-10T10:07:56.3802778+05:30"
+  "last_synced": "2026-01-12T12:26:53.3996391+05:30"
 }
