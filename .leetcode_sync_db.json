@@ -243,6 +243,15 @@
       "category": "Trees",
       "timestamp": "2026-01-04T22:15:51.4585991+05:30"
     },
+    "path-sum-iii": {
+      "submission_id": 1885011601,
+      "problem_id": "437",
+      "title": "Path Sum III",
+      "title_slug": "path-sum-iii",
+      "difficulty": "Medium",
+      "category": "Trees",
+      "timestamp": "2026-01-14T22:09:45.9383159+05:30"
+    },
     "populating-next-right-pointers-in-each-node": {
       "submission_id": 1879980582,
       "problem_id": "116",
@@ -370,5 +379,5 @@
       "timestamp": "2026-01-04T19:08:17.1621736+05:30"
     }
   },
-  "last_synced": "2026-01-12T13:02:09.8338345+05:30"
+  "last_synced": "2026-01-14T22:09:45.9417461+05:30"
 }
