@@ -6,10 +6,10 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 ## 📊 Progress Statistics
 
-**Total Problems Solved:** 42
+**Total Problems Solved:** 43
 
 - 🟢 Easy: 16
-- 🟡 Medium: 24
+- 🟡 Medium: 25
 - 🔴 Hard: 2
 
 ## 📂 Solutions by Category
@@ -26,8 +26,8 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 ### Linked List (5)
 - Easy: 0 | Medium: 5 | Hard: 0
 
-### Stack (5)
-- Easy: 4 | Medium: 1 | Hard: 0
+### Stack (6)
+- Easy: 4 | Medium: 2 | Hard: 0
 
 ### Strings (3)
 - Easy: 1 | Medium: 2 | Hard: 0
@@ -42,6 +42,7 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 | # | Problem | Difficulty | Category | Date |
 |---|---------|------------|----------|------|
+| 173 | [Binary Search Tree Iterator](https://github.com/SohamDhotre/LeetCode/tree/main/Stack/Medium/173.binary-search-tree-iterator) | 🟡 Medium | Stack | 2026-01-14 |
 | 437 | [Path Sum III](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Medium/437.path-sum-iii) | 🟡 Medium | Trees | 2026-01-14 |
 | 129 | [Sum Root to Leaf Numbers](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Medium/129.sum-root-to-leaf-numbers) | 🟡 Medium | Trees | 2026-01-12 |
 | 236 | [Lowest Common Ancestor of a Binary Tree](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Medium/236.lowest-common-ancestor-of-a-binary-tree) | 🟡 Medium | Trees | 2026-01-12 |
@@ -51,7 +52,6 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 | 117 | [Populating Next Right Pointers in Each Node II](https://github.com/SohamDhotre/LeetCode/tree/main/Linked%20List/Medium/117.populating-next-right-pointers-in-each-node-ii) | 🟡 Medium | Linked List | 2026-01-09 |
 | 116 | [Populating Next Right Pointers in Each Node](https://github.com/SohamDhotre/LeetCode/tree/main/Linked%20List/Medium/116.populating-next-right-pointers-in-each-node) | 🟡 Medium | Linked List | 2026-01-09 |
 | 114 | [Flatten Binary Tree to Linked List](https://github.com/SohamDhotre/LeetCode/tree/main/Linked%20List/Medium/114.flatten-binary-tree-to-linked-list) | 🟡 Medium | Linked List | 2026-01-08 |
-| 106 | [Construct Binary Tree from Inorder and Postorder Traversal](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Medium/106.construct-binary-tree-from-inorder-and-postorder-traversal) | 🟡 Medium | Arrays | 2026-01-08 |
 
 ---
 
