@@ -6,10 +6,10 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 ## 📊 Progress Statistics
 
-**Total Problems Solved:** 43
+**Total Problems Solved:** 44
 
 - 🟢 Easy: 16
-- 🟡 Medium: 25
+- 🟡 Medium: 26
 - 🔴 Hard: 2
 
 ## 📂 Solutions by Category
@@ -22,6 +22,9 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 ### Design (1)
 - Easy: 1 | Medium: 0 | Hard: 0
+
+### Hash Table (1)
+- Easy: 0 | Medium: 1 | Hard: 0
 
 ### Linked List (5)
 - Easy: 0 | Medium: 5 | Hard: 0
@@ -42,6 +45,7 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 | # | Problem | Difficulty | Category | Date |
 |---|---------|------------|----------|------|
+| 863 | [All Nodes Distance K in Binary Tree](https://github.com/SohamDhotre/LeetCode/tree/main/Hash%20Table/Medium/863.all-nodes-distance-k-in-binary-tree) | 🟡 Medium | Hash Table | 2026-01-16 |
 | 173 | [Binary Search Tree Iterator](https://github.com/SohamDhotre/LeetCode/tree/main/Stack/Medium/173.binary-search-tree-iterator) | 🟡 Medium | Stack | 2026-01-14 |
 | 437 | [Path Sum III](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Medium/437.path-sum-iii) | 🟡 Medium | Trees | 2026-01-14 |
 | 129 | [Sum Root to Leaf Numbers](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Medium/129.sum-root-to-leaf-numbers) | 🟡 Medium | Trees | 2026-01-12 |
@@ -51,7 +55,6 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 | 230 | [Kth Smallest Element in a BST](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Medium/230.kth-smallest-element-in-a-bst) | 🟡 Medium | Trees | 2026-01-10 |
 | 117 | [Populating Next Right Pointers in Each Node II](https://github.com/SohamDhotre/LeetCode/tree/main/Linked%20List/Medium/117.populating-next-right-pointers-in-each-node-ii) | 🟡 Medium | Linked List | 2026-01-09 |
 | 116 | [Populating Next Right Pointers in Each Node](https://github.com/SohamDhotre/LeetCode/tree/main/Linked%20List/Medium/116.populating-next-right-pointers-in-each-node) | 🟡 Medium | Linked List | 2026-01-09 |
-| 114 | [Flatten Binary Tree to Linked List](https://github.com/SohamDhotre/LeetCode/tree/main/Linked%20List/Medium/114.flatten-binary-tree-to-linked-list) | 🟡 Medium | Linked List | 2026-01-08 |
 
 ---
 

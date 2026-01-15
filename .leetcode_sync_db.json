@@ -9,6 +9,15 @@
       "category": "Arrays",
       "timestamp": "2025-12-17T21:44:07.380615434+05:30"
     },
+    "all-nodes-distance-k-in-binary-tree": {
+      "submission_id": 1886138604,
+      "problem_id": "863",
+      "title": "All Nodes Distance K in Binary Tree",
+      "title_slug": "all-nodes-distance-k-in-binary-tree",
+      "difficulty": "Medium",
+      "category": "Hash Table",
+      "timestamp": "2026-01-16T00:00:06.4069341+05:30"
+    },
     "backspace-string-compare": {
       "submission_id": 1848314815,
       "problem_id": "844",
@@ -388,5 +397,5 @@
       "timestamp": "2026-01-04T19:08:17.1621736+05:30"
     }
   },
-  "last_synced": "2026-01-14T22:31:14.1631755+05:30"
+  "last_synced": "2026-01-16T00:00:06.4103426+05:30"
 }
