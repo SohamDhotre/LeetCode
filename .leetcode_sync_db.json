@@ -234,6 +234,15 @@
       "category": "Arrays",
       "timestamp": "2025-12-10T09:56:00.770807814+05:30"
     },
+    "number-of-good-leaf-nodes-pairs": {
+      "submission_id": 1886970561,
+      "problem_id": "1530",
+      "title": "Number of Good Leaf Nodes Pairs",
+      "title_slug": "number-of-good-leaf-nodes-pairs",
+      "difficulty": "Medium",
+      "category": "Trees",
+      "timestamp": "2026-01-16T21:47:38.0791568+05:30"
+    },
     "number-of-recent-calls": {
       "submission_id": 1858004384,
       "problem_id": "933",
@@ -397,5 +406,5 @@
       "timestamp": "2026-01-04T19:08:17.1621736+05:30"
     }
   },
-  "last_synced": "2026-01-16T00:00:06.4103426+05:30"
+  "last_synced": "2026-01-16T21:47:38.0820941+05:30"
 }

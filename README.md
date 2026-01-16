@@ -6,10 +6,10 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 ## 📊 Progress Statistics
 
-**Total Problems Solved:** 44
+**Total Problems Solved:** 45
 
 - 🟢 Easy: 16
-- 🟡 Medium: 26
+- 🟡 Medium: 27
 - 🔴 Hard: 2
 
 ## 📂 Solutions by Category
@@ -35,8 +35,8 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 ### Strings (3)
 - Easy: 1 | Medium: 2 | Hard: 0
 
-### Trees (16)
-- Easy: 8 | Medium: 8 | Hard: 0
+### Trees (17)
+- Easy: 8 | Medium: 9 | Hard: 0
 
 ### Two Pointers (1)
 - Easy: 1 | Medium: 0 | Hard: 0
@@ -45,6 +45,7 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 | # | Problem | Difficulty | Category | Date |
 |---|---------|------------|----------|------|
+| 1530 | [Number of Good Leaf Nodes Pairs](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Medium/1530.number-of-good-leaf-nodes-pairs) | 🟡 Medium | Trees | 2026-01-16 |
 | 863 | [All Nodes Distance K in Binary Tree](https://github.com/SohamDhotre/LeetCode/tree/main/Hash%20Table/Medium/863.all-nodes-distance-k-in-binary-tree) | 🟡 Medium | Hash Table | 2026-01-16 |
 | 173 | [Binary Search Tree Iterator](https://github.com/SohamDhotre/LeetCode/tree/main/Stack/Medium/173.binary-search-tree-iterator) | 🟡 Medium | Stack | 2026-01-14 |
 | 437 | [Path Sum III](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Medium/437.path-sum-iii) | 🟡 Medium | Trees | 2026-01-14 |
@@ -54,7 +55,6 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 | 199 | [Binary Tree Right Side View](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Medium/199.binary-tree-right-side-view) | 🟡 Medium | Trees | 2026-01-10 |
 | 230 | [Kth Smallest Element in a BST](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Medium/230.kth-smallest-element-in-a-bst) | 🟡 Medium | Trees | 2026-01-10 |
 | 117 | [Populating Next Right Pointers in Each Node II](https://github.com/SohamDhotre/LeetCode/tree/main/Linked%20List/Medium/117.populating-next-right-pointers-in-each-node-ii) | 🟡 Medium | Linked List | 2026-01-09 |
-| 116 | [Populating Next Right Pointers in Each Node](https://github.com/SohamDhotre/LeetCode/tree/main/Linked%20List/Medium/116.populating-next-right-pointers-in-each-node) | 🟡 Medium | Linked List | 2026-01-09 |
 
 ---
 
