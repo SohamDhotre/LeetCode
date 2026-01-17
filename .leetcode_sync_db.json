@@ -387,6 +387,15 @@
       "category": "Trees",
       "timestamp": "2026-01-04T21:45:34.1367524+05:30"
     },
+    "trim-a-binary-search-tree": {
+      "submission_id": 1887874679,
+      "problem_id": "669",
+      "title": "Trim a Binary Search Tree",
+      "title_slug": "trim-a-binary-search-tree",
+      "difficulty": "Medium",
+      "category": "Trees",
+      "timestamp": "2026-01-17T20:25:52.8500261+05:30"
+    },
     "valid-parentheses": {
       "submission_id": 1848148965,
       "problem_id": "20",
@@ -406,5 +415,5 @@
       "timestamp": "2026-01-04T19:08:17.1621736+05:30"
     }
   },
-  "last_synced": "2026-01-16T21:47:38.0820941+05:30"
+  "last_synced": "2026-01-17T20:25:52.85164+05:30"
 }
