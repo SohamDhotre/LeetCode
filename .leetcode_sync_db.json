@@ -108,6 +108,15 @@
       "category": "Arrays",
       "timestamp": "2026-01-07T10:06:10.1323501+05:30"
     },
+    "count-good-nodes-in-binary-tree": {
+      "submission_id": 1888922780,
+      "problem_id": "1448",
+      "title": "Count Good Nodes in Binary Tree",
+      "title_slug": "count-good-nodes-in-binary-tree",
+      "difficulty": "Medium",
+      "category": "Trees",
+      "timestamp": "2026-01-18T19:27:16.9727844+05:30"
+    },
     "course-schedule": {
       "submission_id": 1858235100,
       "problem_id": "207",
@@ -415,5 +424,5 @@
       "timestamp": "2026-01-04T19:08:17.1621736+05:30"
     }
   },
-  "last_synced": "2026-01-17T20:25:52.85164+05:30"
+  "last_synced": "2026-01-18T19:27:16.9757131+05:30"
 }
