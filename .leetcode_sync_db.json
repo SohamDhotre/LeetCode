@@ -424,14 +424,14 @@
       "timestamp": "2026-01-04T19:08:17.1621736+05:30"
     },
     "vertical-order-traversal-of-a-binary-tree": {
-      "submission_id": 1888991667,
+      "submission_id": 1888993963,
       "problem_id": "987",
       "title": "Vertical Order Traversal of a Binary Tree",
       "title_slug": "vertical-order-traversal-of-a-binary-tree",
       "difficulty": "Hard",
       "category": "Hash Table",
-      "timestamp": "2026-01-18T20:48:04.9360412+05:30"
+      "timestamp": "2026-01-18T20:48:10.9642121+05:30"
     }
   },
-  "last_synced": "2026-01-18T20:48:04.9388831+05:30"
+  "last_synced": "2026-01-18T20:48:10.9684221+05:30"
 }

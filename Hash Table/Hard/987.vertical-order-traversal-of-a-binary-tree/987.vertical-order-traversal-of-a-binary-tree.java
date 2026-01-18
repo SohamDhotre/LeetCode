@@ -14,45 +14,44 @@
  * }
  */
 class Solution {
-    class NodeInfo{
-        TreeNode node;
-        int row;
-        int col;
-        NodeInfo(TreeNode node, int row, int col){
-            this.node = node;
-            this.row = row;
-            this.col = col;
+    public void mapping(TreeMap<Integer, TreeMap<Integer, PriorityQueue<Integer>>> map, TreeNode root, int x, int l){
+        if(root == null){
+            return;
         }
-    }   
+        if(!map.containsKey(x)){
+            map.put(x, new TreeMap());
+        }
+
+        if(!map.get(x).containsKey(l)){
+            map.get(x).put(l, new PriorityQueue<>());
+        }
+
+        map.get(x).get(l).add(root.val);
+
+        mapping(map, root.left, x-1, l+1);
+        mapping(map, root.right, x+1, l+1);
+    }
 
     public List<List<Integer>> verticalTraversal(TreeNode root) {
-        Map<Integer, Map<Integer, List<Integer>>> cache = new TreeMap<>();
-        Deque<NodeInfo>q=new ArrayDeque<>();
-        q.add(new NodeInfo(root, 0, 0));
-        int level=0, ver=0;
-        while(!q.isEmpty()){
-            NodeInfo nodeInfo=q.poll();
-            TreeNode node = nodeInfo.node;
-            int row = nodeInfo.row;
-            int col = nodeInfo.col;
-
-            cache.computeIfAbsent(col, k -> new TreeMap<>())
-                .computeIfAbsent(row, k -> new ArrayList<>())
-                .add(node.val);
-
-            if(node.left!=null) q.offer(new NodeInfo(node.left, row+1, col-1));
-            if(node.right!=null) q.offer(new NodeInfo(node.right, row+1, col+1));
+        if(root == null){
+            return new LinkedList<>();
         }
+        List<List<Integer>> ans = new LinkedList<>();
+        
+        TreeMap<Integer, TreeMap<Integer, PriorityQueue<Integer>>> map = new TreeMap<>();
+        mapping(map, root, 0, 0);
 
-        List<List<Integer>>res=new ArrayList<>();
-        for(Map<Integer, List<Integer>> rows:cache.values()){
-            List<Integer> column = new ArrayList<>();
-            for (List<Integer> values : rows.values()) {
-                Collections.sort(values);
-                column.addAll(values);
+        for(Map.Entry<Integer, TreeMap<Integer, PriorityQueue<Integer>>> entry : map.entrySet()){
+            List<Integer> l = new LinkedList<>();
+            for(Map.Entry<Integer, PriorityQueue<Integer>> e : entry.getValue().entrySet()){
+                PriorityQueue<Integer> q = e.getValue();
+                while(!q.isEmpty()){
+                    l.add(q.poll());
+                }
+                
             }
-            res.add(column);
+            ans.add(l);
         }
-        return res;
+        return ans;
     }
 }
