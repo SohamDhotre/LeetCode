@@ -6,11 +6,11 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 ## 📊 Progress Statistics
 
-**Total Problems Solved:** 47
+**Total Problems Solved:** 48
 
 - 🟢 Easy: 16
 - 🟡 Medium: 29
-- 🔴 Hard: 2
+- 🔴 Hard: 3
 
 ## 📂 Solutions by Category
 
@@ -23,8 +23,8 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 ### Design (1)
 - Easy: 1 | Medium: 0 | Hard: 0
 
-### Hash Table (1)
-- Easy: 0 | Medium: 1 | Hard: 0
+### Hash Table (2)
+- Easy: 0 | Medium: 1 | Hard: 1
 
 ### Linked List (5)
 - Easy: 0 | Medium: 5 | Hard: 0
@@ -45,6 +45,7 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 | # | Problem | Difficulty | Category | Date |
 |---|---------|------------|----------|------|
+| 987 | [Vertical Order Traversal of a Binary Tree](https://github.com/SohamDhotre/LeetCode/tree/main/Hash%20Table/Hard/987.vertical-order-traversal-of-a-binary-tree) | 🔴 Hard | Hash Table | 2026-01-18 |
 | 1448 | [Count Good Nodes in Binary Tree](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Medium/1448.count-good-nodes-in-binary-tree) | 🟡 Medium | Trees | 2026-01-18 |
 | 669 | [Trim a Binary Search Tree](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Medium/669.trim-a-binary-search-tree) | 🟡 Medium | Trees | 2026-01-17 |
 | 1530 | [Number of Good Leaf Nodes Pairs](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Medium/1530.number-of-good-leaf-nodes-pairs) | 🟡 Medium | Trees | 2026-01-16 |
@@ -54,7 +55,6 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 | 129 | [Sum Root to Leaf Numbers](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Medium/129.sum-root-to-leaf-numbers) | 🟡 Medium | Trees | 2026-01-12 |
 | 236 | [Lowest Common Ancestor of a Binary Tree](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Medium/236.lowest-common-ancestor-of-a-binary-tree) | 🟡 Medium | Trees | 2026-01-12 |
 | 543 | [Diameter of Binary Tree](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Easy/543.diameter-of-binary-tree) | 🟢 Easy | Trees | 2026-01-12 |
-| 199 | [Binary Tree Right Side View](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Medium/199.binary-tree-right-side-view) | 🟡 Medium | Trees | 2026-01-10 |
 
 ---
 
