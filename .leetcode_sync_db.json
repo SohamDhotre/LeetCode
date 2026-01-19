@@ -171,6 +171,15 @@
       "category": "Trees",
       "timestamp": "2026-01-04T21:55:41.6905528+05:30"
     },
+    "kth-largest-element-in-a-stream": {
+      "submission_id": 1890149983,
+      "problem_id": "703",
+      "title": "Kth Largest Element in a Stream",
+      "title_slug": "kth-largest-element-in-a-stream",
+      "difficulty": "Easy",
+      "category": "Trees",
+      "timestamp": "2026-01-19T22:52:15.6239065+05:30"
+    },
     "kth-smallest-element-in-a-bst": {
       "submission_id": 1880337297,
       "problem_id": "230",
@@ -433,5 +442,5 @@
       "timestamp": "2026-01-18T20:48:10.9642121+05:30"
     }
   },
-  "last_synced": "2026-01-18T20:48:10.9684221+05:30"
+  "last_synced": "2026-01-19T22:52:15.6349387+05:30"
 }

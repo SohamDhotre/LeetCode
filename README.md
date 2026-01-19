@@ -6,9 +6,9 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 ## 📊 Progress Statistics
 
-**Total Problems Solved:** 48
+**Total Problems Solved:** 49
 
-- 🟢 Easy: 16
+- 🟢 Easy: 17
 - 🟡 Medium: 29
 - 🔴 Hard: 3
 
@@ -35,8 +35,8 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 ### Strings (3)
 - Easy: 1 | Medium: 2 | Hard: 0
 
-### Trees (19)
-- Easy: 8 | Medium: 11 | Hard: 0
+### Trees (20)
+- Easy: 9 | Medium: 11 | Hard: 0
 
 ### Two Pointers (1)
 - Easy: 1 | Medium: 0 | Hard: 0
@@ -45,6 +45,7 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 | # | Problem | Difficulty | Category | Date |
 |---|---------|------------|----------|------|
+| 703 | [Kth Largest Element in a Stream](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Easy/703.kth-largest-element-in-a-stream) | 🟢 Easy | Trees | 2026-01-19 |
 | 987 | [Vertical Order Traversal of a Binary Tree](https://github.com/SohamDhotre/LeetCode/tree/main/Hash%20Table/Hard/987.vertical-order-traversal-of-a-binary-tree) | 🔴 Hard | Hash Table | 2026-01-18 |
 | 1448 | [Count Good Nodes in Binary Tree](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Medium/1448.count-good-nodes-in-binary-tree) | 🟡 Medium | Trees | 2026-01-18 |
 | 669 | [Trim a Binary Search Tree](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Medium/669.trim-a-binary-search-tree) | 🟡 Medium | Trees | 2026-01-17 |
@@ -54,7 +55,6 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 | 437 | [Path Sum III](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Medium/437.path-sum-iii) | 🟡 Medium | Trees | 2026-01-14 |
 | 129 | [Sum Root to Leaf Numbers](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Medium/129.sum-root-to-leaf-numbers) | 🟡 Medium | Trees | 2026-01-12 |
 | 236 | [Lowest Common Ancestor of a Binary Tree](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Medium/236.lowest-common-ancestor-of-a-binary-tree) | 🟡 Medium | Trees | 2026-01-12 |
-| 543 | [Diameter of Binary Tree](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Easy/543.diameter-of-binary-tree) | 🟢 Easy | Trees | 2026-01-12 |
 
 ---
 
