@@ -153,6 +153,15 @@
       "category": "Linked List",
       "timestamp": "2026-01-08T21:37:39.461032+05:30"
     },
+    "house-robber": {
+      "submission_id": 1892131423,
+      "problem_id": "198",
+      "title": "House Robber",
+      "title_slug": "house-robber",
+      "difficulty": "Medium",
+      "category": "Arrays",
+      "timestamp": "2026-01-30T10:30:15.974623+05:30"
+    },
     "implement-stack-using-queues": {
       "submission_id": 1858037905,
       "problem_id": "225",
@@ -414,6 +423,15 @@
       "category": "Trees",
       "timestamp": "2026-01-04T21:45:34.1367524+05:30"
     },
+    "top-k-frequent-elements": {
+      "submission_id": 1901614852,
+      "problem_id": "347",
+      "title": "Top K Frequent Elements",
+      "title_slug": "top-k-frequent-elements",
+      "difficulty": "Medium",
+      "category": "Arrays",
+      "timestamp": "2026-01-30T10:30:15.3072376+05:30"
+    },
     "trim-a-binary-search-tree": {
       "submission_id": 1887874679,
       "problem_id": "669",
@@ -451,5 +469,5 @@
       "timestamp": "2026-01-18T20:48:10.9642121+05:30"
     }
   },
-  "last_synced": "2026-01-20T09:18:35.2163301+05:30"
+  "last_synced": "2026-01-30T10:30:15.9775155+05:30"
 }
