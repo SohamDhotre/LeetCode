@@ -18,9 +18,13 @@ class Solution {
             }            
         });
         // pq.forEach(row->System.out.println("q key: "+row[0]+", ferq: "+row[1]));
-        int []ans=new int[pq.size()];
-        int index=0;
-        for(int []row:pq) ans[index++]=row[0];
-        return ans;
+        int[] res = new int[Math.min(pq.size(), k)];
+        int index = 0;
+
+        while (!pq.isEmpty()) {
+            res[index++] = pq.poll()[0];
+        }
+
+        return res;
     }
 }

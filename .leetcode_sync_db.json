@@ -180,6 +180,15 @@
       "category": "Trees",
       "timestamp": "2026-01-04T21:55:41.6905528+05:30"
     },
+    "k-closest-points-to-origin": {
+      "submission_id": 1901810235,
+      "problem_id": "973",
+      "title": "K Closest Points to Origin",
+      "title_slug": "k-closest-points-to-origin",
+      "difficulty": "Medium",
+      "category": "Arrays",
+      "timestamp": "2026-02-02T08:21:08.3780246+05:30"
+    },
     "kth-largest-element-in-a-stream": {
       "submission_id": 1890149983,
       "problem_id": "703",
@@ -233,6 +242,15 @@
       "difficulty": "Easy",
       "category": "Trees",
       "timestamp": "2026-01-05T21:52:41.7425157+05:30"
+    },
+    "merge-k-sorted-lists": {
+      "submission_id": 1901899687,
+      "problem_id": "23",
+      "title": "Merge k Sorted Lists",
+      "title_slug": "merge-k-sorted-lists",
+      "difficulty": "Hard",
+      "category": "Linked List",
+      "timestamp": "2026-02-02T08:21:07.8817339+05:30"
     },
     "merge-two-binary-trees": {
       "submission_id": 1875474971,
@@ -424,13 +442,13 @@
       "timestamp": "2026-01-04T21:45:34.1367524+05:30"
     },
     "top-k-frequent-elements": {
-      "submission_id": 1901614852,
+      "submission_id": 1901616523,
       "problem_id": "347",
       "title": "Top K Frequent Elements",
       "title_slug": "top-k-frequent-elements",
       "difficulty": "Medium",
       "category": "Arrays",
-      "timestamp": "2026-01-30T10:30:15.3072376+05:30"
+      "timestamp": "2026-02-02T08:21:08.6659738+05:30"
     },
     "trim-a-binary-search-tree": {
       "submission_id": 1887874679,
@@ -469,5 +487,5 @@
       "timestamp": "2026-01-18T20:48:10.9642121+05:30"
     }
   },
-  "last_synced": "2026-01-30T10:30:15.9775155+05:30"
+  "last_synced": "2026-02-02T08:21:08.6677104+05:30"
 }

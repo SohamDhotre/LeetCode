@@ -6,16 +6,16 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 ## 📊 Progress Statistics
 
-**Total Problems Solved:** 52
+**Total Problems Solved:** 54
 
 - 🟢 Easy: 18
-- 🟡 Medium: 31
-- 🔴 Hard: 3
+- 🟡 Medium: 32
+- 🔴 Hard: 4
 
 ## 📂 Solutions by Category
 
-### Arrays (13)
-- Easy: 2 | Medium: 9 | Hard: 2
+### Arrays (14)
+- Easy: 2 | Medium: 10 | Hard: 2
 
 ### DFS (1)
 - Easy: 0 | Medium: 1 | Hard: 0
@@ -26,8 +26,8 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 ### Hash Table (2)
 - Easy: 0 | Medium: 1 | Hard: 1
 
-### Linked List (5)
-- Easy: 0 | Medium: 5 | Hard: 0
+### Linked List (6)
+- Easy: 0 | Medium: 5 | Hard: 1
 
 ### Stack (6)
 - Easy: 4 | Medium: 2 | Hard: 0
@@ -45,16 +45,16 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 | # | Problem | Difficulty | Category | Date |
 |---|---------|------------|----------|------|
+| 347 | [Top K Frequent Elements](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Medium/347.top-k-frequent-elements) | 🟡 Medium | Arrays | 2026-02-02 |
+| 973 | [K Closest Points to Origin](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Medium/973.k-closest-points-to-origin) | 🟡 Medium | Arrays | 2026-02-02 |
+| 23 | [Merge k Sorted Lists](https://github.com/SohamDhotre/LeetCode/tree/main/Linked%20List/Hard/23.merge-k-sorted-lists) | 🔴 Hard | Linked List | 2026-02-02 |
 | 198 | [House Robber](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Medium/198.house-robber) | 🟡 Medium | Arrays | 2026-01-30 |
-| 347 | [Top K Frequent Elements](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Medium/347.top-k-frequent-elements) | 🟡 Medium | Arrays | 2026-01-30 |
 | 1046 | [Last Stone Weight](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Easy/1046.last-stone-weight) | 🟢 Easy | Arrays | 2026-01-20 |
 | 703 | [Kth Largest Element in a Stream](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Easy/703.kth-largest-element-in-a-stream) | 🟢 Easy | Trees | 2026-01-19 |
 | 987 | [Vertical Order Traversal of a Binary Tree](https://github.com/SohamDhotre/LeetCode/tree/main/Hash%20Table/Hard/987.vertical-order-traversal-of-a-binary-tree) | 🔴 Hard | Hash Table | 2026-01-18 |
 | 1448 | [Count Good Nodes in Binary Tree](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Medium/1448.count-good-nodes-in-binary-tree) | 🟡 Medium | Trees | 2026-01-18 |
 | 669 | [Trim a Binary Search Tree](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Medium/669.trim-a-binary-search-tree) | 🟡 Medium | Trees | 2026-01-17 |
 | 1530 | [Number of Good Leaf Nodes Pairs](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Medium/1530.number-of-good-leaf-nodes-pairs) | 🟡 Medium | Trees | 2026-01-16 |
-| 863 | [All Nodes Distance K in Binary Tree](https://github.com/SohamDhotre/LeetCode/tree/main/Hash%20Table/Medium/863.all-nodes-distance-k-in-binary-tree) | 🟡 Medium | Hash Table | 2026-01-16 |
-| 173 | [Binary Search Tree Iterator](https://github.com/SohamDhotre/LeetCode/tree/main/Stack/Medium/173.binary-search-tree-iterator) | 🟡 Medium | Stack | 2026-01-14 |
 
 ---
 
