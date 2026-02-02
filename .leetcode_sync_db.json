@@ -144,6 +144,15 @@
       "category": "Trees",
       "timestamp": "2026-01-12T12:26:53.0887736+05:30"
     },
+    "find-median-from-data-stream": {
+      "submission_id": 1905603632,
+      "problem_id": "295",
+      "title": "Find Median from Data Stream",
+      "title_slug": "find-median-from-data-stream",
+      "difficulty": "Hard",
+      "category": "Two Pointers",
+      "timestamp": "2026-02-02T21:02:13.800063+05:30"
+    },
     "flatten-binary-tree-to-linked-list": {
       "submission_id": 1878896566,
       "problem_id": "114",
@@ -487,5 +496,5 @@
       "timestamp": "2026-01-18T20:48:10.9642121+05:30"
     }
   },
-  "last_synced": "2026-02-02T08:21:08.6677104+05:30"
+  "last_synced": "2026-02-02T21:02:13.8071283+05:30"
 }

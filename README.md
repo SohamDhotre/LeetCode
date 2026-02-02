@@ -6,11 +6,11 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 ## 📊 Progress Statistics
 
-**Total Problems Solved:** 54
+**Total Problems Solved:** 55
 
 - 🟢 Easy: 18
 - 🟡 Medium: 32
-- 🔴 Hard: 4
+- 🔴 Hard: 5
 
 ## 📂 Solutions by Category
 
@@ -38,13 +38,14 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 ### Trees (20)
 - Easy: 9 | Medium: 11 | Hard: 0
 
-### Two Pointers (1)
-- Easy: 1 | Medium: 0 | Hard: 0
+### Two Pointers (2)
+- Easy: 1 | Medium: 0 | Hard: 1
 
 ## 🕒 Recent Submissions
 
 | # | Problem | Difficulty | Category | Date |
 |---|---------|------------|----------|------|
+| 295 | [Find Median from Data Stream](https://github.com/SohamDhotre/LeetCode/tree/main/Two%20Pointers/Hard/295.find-median-from-data-stream) | 🔴 Hard | Two Pointers | 2026-02-02 |
 | 347 | [Top K Frequent Elements](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Medium/347.top-k-frequent-elements) | 🟡 Medium | Arrays | 2026-02-02 |
 | 973 | [K Closest Points to Origin](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Medium/973.k-closest-points-to-origin) | 🟡 Medium | Arrays | 2026-02-02 |
 | 23 | [Merge k Sorted Lists](https://github.com/SohamDhotre/LeetCode/tree/main/Linked%20List/Hard/23.merge-k-sorted-lists) | 🔴 Hard | Linked List | 2026-02-02 |
@@ -54,7 +55,6 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 | 987 | [Vertical Order Traversal of a Binary Tree](https://github.com/SohamDhotre/LeetCode/tree/main/Hash%20Table/Hard/987.vertical-order-traversal-of-a-binary-tree) | 🔴 Hard | Hash Table | 2026-01-18 |
 | 1448 | [Count Good Nodes in Binary Tree](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Medium/1448.count-good-nodes-in-binary-tree) | 🟡 Medium | Trees | 2026-01-18 |
 | 669 | [Trim a Binary Search Tree](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Medium/669.trim-a-binary-search-tree) | 🟡 Medium | Trees | 2026-01-17 |
-| 1530 | [Number of Good Leaf Nodes Pairs](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Medium/1530.number-of-good-leaf-nodes-pairs) | 🟡 Medium | Trees | 2026-01-16 |
 
 ---
 
