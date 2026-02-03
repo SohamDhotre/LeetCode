@@ -6,16 +6,16 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 ## 📊 Progress Statistics
 
-**Total Problems Solved:** 55
+**Total Problems Solved:** 56
 
-- 🟢 Easy: 18
+- 🟢 Easy: 19
 - 🟡 Medium: 32
 - 🔴 Hard: 5
 
 ## 📂 Solutions by Category
 
-### Arrays (14)
-- Easy: 2 | Medium: 10 | Hard: 2
+### Arrays (15)
+- Easy: 3 | Medium: 10 | Hard: 2
 
 ### DFS (1)
 - Easy: 0 | Medium: 1 | Hard: 0
@@ -45,6 +45,7 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 | # | Problem | Difficulty | Category | Date |
 |---|---------|------------|----------|------|
+| 733 | [Flood Fill](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Easy/733.flood-fill) | 🟢 Easy | Arrays | 2026-02-03 |
 | 295 | [Find Median from Data Stream](https://github.com/SohamDhotre/LeetCode/tree/main/Two%20Pointers/Hard/295.find-median-from-data-stream) | 🔴 Hard | Two Pointers | 2026-02-02 |
 | 347 | [Top K Frequent Elements](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Medium/347.top-k-frequent-elements) | 🟡 Medium | Arrays | 2026-02-02 |
 | 973 | [K Closest Points to Origin](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Medium/973.k-closest-points-to-origin) | 🟡 Medium | Arrays | 2026-02-02 |
@@ -54,7 +55,6 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 | 703 | [Kth Largest Element in a Stream](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Easy/703.kth-largest-element-in-a-stream) | 🟢 Easy | Trees | 2026-01-19 |
 | 987 | [Vertical Order Traversal of a Binary Tree](https://github.com/SohamDhotre/LeetCode/tree/main/Hash%20Table/Hard/987.vertical-order-traversal-of-a-binary-tree) | 🔴 Hard | Hash Table | 2026-01-18 |
 | 1448 | [Count Good Nodes in Binary Tree](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Medium/1448.count-good-nodes-in-binary-tree) | 🟡 Medium | Trees | 2026-01-18 |
-| 669 | [Trim a Binary Search Tree](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Medium/669.trim-a-binary-search-tree) | 🟡 Medium | Trees | 2026-01-17 |
 
 ---
 
