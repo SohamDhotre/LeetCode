@@ -6,10 +6,10 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 ## 📊 Progress Statistics
 
-**Total Problems Solved:** 56
+**Total Problems Solved:** 57
 
 - 🟢 Easy: 19
-- 🟡 Medium: 32
+- 🟡 Medium: 33
 - 🔴 Hard: 5
 
 ## 📂 Solutions by Category
@@ -17,8 +17,8 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 ### Arrays (15)
 - Easy: 3 | Medium: 10 | Hard: 2
 
-### DFS (1)
-- Easy: 0 | Medium: 1 | Hard: 0
+### DFS (2)
+- Easy: 0 | Medium: 2 | Hard: 0
 
 ### Design (1)
 - Easy: 1 | Medium: 0 | Hard: 0
@@ -45,6 +45,7 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 | # | Problem | Difficulty | Category | Date |
 |---|---------|------------|----------|------|
+| 785 | [Is Graph Bipartite?](https://github.com/SohamDhotre/LeetCode/tree/main/DFS/Medium/785.is-graph-bipartite) | 🟡 Medium | DFS | 2026-02-04 |
 | 733 | [Flood Fill](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Easy/733.flood-fill) | 🟢 Easy | Arrays | 2026-02-03 |
 | 295 | [Find Median from Data Stream](https://github.com/SohamDhotre/LeetCode/tree/main/Two%20Pointers/Hard/295.find-median-from-data-stream) | 🔴 Hard | Two Pointers | 2026-02-02 |
 | 347 | [Top K Frequent Elements](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Medium/347.top-k-frequent-elements) | 🟡 Medium | Arrays | 2026-02-02 |
@@ -54,7 +55,6 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 | 1046 | [Last Stone Weight](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Easy/1046.last-stone-weight) | 🟢 Easy | Arrays | 2026-01-20 |
 | 703 | [Kth Largest Element in a Stream](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Easy/703.kth-largest-element-in-a-stream) | 🟢 Easy | Trees | 2026-01-19 |
 | 987 | [Vertical Order Traversal of a Binary Tree](https://github.com/SohamDhotre/LeetCode/tree/main/Hash%20Table/Hard/987.vertical-order-traversal-of-a-binary-tree) | 🔴 Hard | Hash Table | 2026-01-18 |
-| 1448 | [Count Good Nodes in Binary Tree](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Medium/1448.count-good-nodes-in-binary-tree) | 🟡 Medium | Trees | 2026-01-18 |
 
 ---
 
