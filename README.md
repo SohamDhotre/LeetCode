@@ -6,9 +6,9 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 ## 📊 Progress Statistics
 
-**Total Problems Solved:** 59
+**Total Problems Solved:** 60
 
-- 🟢 Easy: 19
+- 🟢 Easy: 20
 - 🟡 Medium: 35
 - 🔴 Hard: 5
 
@@ -21,6 +21,9 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 - Easy: 0 | Medium: 3 | Hard: 0
 
 ### Design (1)
+- Easy: 1 | Medium: 0 | Hard: 0
+
+### Graphs (1)
 - Easy: 1 | Medium: 0 | Hard: 0
 
 ### Hash Table (3)
@@ -45,6 +48,7 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 | # | Problem | Difficulty | Category | Date |
 |---|---------|------------|----------|------|
+| 1791 | [Find Center of Star Graph](https://github.com/SohamDhotre/LeetCode/tree/main/Graphs/Easy/1791.find-center-of-star-graph) | 🟢 Easy | Graphs | 2026-02-05 |
 | 547 | [Number of Provinces](https://github.com/SohamDhotre/LeetCode/tree/main/DFS/Medium/547.number-of-provinces) | 🟡 Medium | DFS | 2026-02-05 |
 | 133 | [Clone Graph](https://github.com/SohamDhotre/LeetCode/tree/main/Hash%20Table/Medium/133.clone-graph) | 🟡 Medium | Hash Table | 2026-02-04 |
 | 785 | [Is Graph Bipartite?](https://github.com/SohamDhotre/LeetCode/tree/main/DFS/Medium/785.is-graph-bipartite) | 🟡 Medium | DFS | 2026-02-04 |
@@ -54,7 +58,6 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 | 973 | [K Closest Points to Origin](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Medium/973.k-closest-points-to-origin) | 🟡 Medium | Arrays | 2026-02-02 |
 | 23 | [Merge k Sorted Lists](https://github.com/SohamDhotre/LeetCode/tree/main/Linked%20List/Hard/23.merge-k-sorted-lists) | 🔴 Hard | Linked List | 2026-02-02 |
 | 198 | [House Robber](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Medium/198.house-robber) | 🟡 Medium | Arrays | 2026-01-30 |
-| 1046 | [Last Stone Weight](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Easy/1046.last-stone-weight) | 🟢 Easy | Arrays | 2026-01-20 |
 
 ---
 

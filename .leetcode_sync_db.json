@@ -153,6 +153,15 @@
       "category": "Trees",
       "timestamp": "2026-01-12T12:26:53.0887736+05:30"
     },
+    "find-center-of-star-graph": {
+      "submission_id": 1908599591,
+      "problem_id": "1791",
+      "title": "Find Center of Star Graph",
+      "title_slug": "find-center-of-star-graph",
+      "difficulty": "Easy",
+      "category": "Graphs",
+      "timestamp": "2026-02-05T08:38:23.5372382+05:30"
+    },
     "find-median-from-data-stream": {
       "submission_id": 1905603632,
       "problem_id": "295",
@@ -532,5 +541,5 @@
       "timestamp": "2026-01-18T20:48:10.9642121+05:30"
     }
   },
-  "last_synced": "2026-02-05T08:18:45.0813933+05:30"
+  "last_synced": "2026-02-05T08:38:23.5441789+05:30"
 }
