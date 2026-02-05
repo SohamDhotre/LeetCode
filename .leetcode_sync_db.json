@@ -333,6 +333,15 @@
       "category": "Trees",
       "timestamp": "2026-01-16T21:47:38.0791568+05:30"
     },
+    "number-of-provinces": {
+      "submission_id": 1908588217,
+      "problem_id": "547",
+      "title": "Number of Provinces",
+      "title_slug": "number-of-provinces",
+      "difficulty": "Medium",
+      "category": "DFS",
+      "timestamp": "2026-02-05T08:18:45.0756866+05:30"
+    },
     "number-of-recent-calls": {
       "submission_id": 1858004384,
       "problem_id": "933",
@@ -523,5 +532,5 @@
       "timestamp": "2026-01-18T20:48:10.9642121+05:30"
     }
   },
-  "last_synced": "2026-02-04T21:05:30.1965074+05:30"
+  "last_synced": "2026-02-05T08:18:45.0813933+05:30"
 }

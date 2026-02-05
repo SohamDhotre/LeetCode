@@ -6,10 +6,10 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 ## 📊 Progress Statistics
 
-**Total Problems Solved:** 58
+**Total Problems Solved:** 59
 
 - 🟢 Easy: 19
-- 🟡 Medium: 34
+- 🟡 Medium: 35
 - 🔴 Hard: 5
 
 ## 📂 Solutions by Category
@@ -17,8 +17,8 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 ### Arrays (15)
 - Easy: 3 | Medium: 10 | Hard: 2
 
-### DFS (2)
-- Easy: 0 | Medium: 2 | Hard: 0
+### DFS (3)
+- Easy: 0 | Medium: 3 | Hard: 0
 
 ### Design (1)
 - Easy: 1 | Medium: 0 | Hard: 0
@@ -45,6 +45,7 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 | # | Problem | Difficulty | Category | Date |
 |---|---------|------------|----------|------|
+| 547 | [Number of Provinces](https://github.com/SohamDhotre/LeetCode/tree/main/DFS/Medium/547.number-of-provinces) | 🟡 Medium | DFS | 2026-02-05 |
 | 133 | [Clone Graph](https://github.com/SohamDhotre/LeetCode/tree/main/Hash%20Table/Medium/133.clone-graph) | 🟡 Medium | Hash Table | 2026-02-04 |
 | 785 | [Is Graph Bipartite?](https://github.com/SohamDhotre/LeetCode/tree/main/DFS/Medium/785.is-graph-bipartite) | 🟡 Medium | DFS | 2026-02-04 |
 | 733 | [Flood Fill](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Easy/733.flood-fill) | 🟢 Easy | Arrays | 2026-02-03 |
@@ -54,7 +55,6 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 | 23 | [Merge k Sorted Lists](https://github.com/SohamDhotre/LeetCode/tree/main/Linked%20List/Hard/23.merge-k-sorted-lists) | 🔴 Hard | Linked List | 2026-02-02 |
 | 198 | [House Robber](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Medium/198.house-robber) | 🟡 Medium | Arrays | 2026-01-30 |
 | 1046 | [Last Stone Weight](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Easy/1046.last-stone-weight) | 🟢 Easy | Arrays | 2026-01-20 |
-| 703 | [Kth Largest Element in a Stream](https://github.com/SohamDhotre/LeetCode/tree/main/Trees/Easy/703.kth-largest-element-in-a-stream) | 🟢 Easy | Trees | 2026-01-19 |
 
 ---
 
