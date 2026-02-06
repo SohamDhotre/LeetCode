@@ -1,31 +1,33 @@
 class Solution {
+    List<List<Integer>>graph;
+    int []state;
+    boolean hasCycle;
+
     public boolean canFinish(int numCourses, int[][] prerequisites) {
-        int []indegree=new int[numCourses];
-        List<List<Integer>>graph=new ArrayList<>();
-        Queue<Integer>q=new ArrayDeque<>();
-        int processed=0;
+        graph=new ArrayList<>();
+        state=new int[numCourses]; // state[0]=0 // not visited
+        hasCycle=false;
         for(int node=0;node<numCourses;node++) graph.add(new ArrayList<>());
+        for(int []edge:prerequisites) graph.get(edge[1]).add(edge[0]);
+        for(int node=0;node<numCourses;node++){
+            if(state[node]==0) dfs(node);
+            if(hasCycle) return false;
+        }   
+        return true;
+    }
 
-        for(int []edge:prerequisites){
-            int course=edge[0];
-            int preq=edge[1];
-            indegree[course]++;
-            graph.get(preq).add(course);
-        }
-
-        for(int node=0;node<indegree.length;node++) 
-            if(indegree[node]==0) 
-                q.offer(node);
-
-        while(!q.isEmpty()){
-            int node=q.poll();
-            processed++;
-            for(int dep:graph.get(node)){
-                indegree[dep]--;
-                if(indegree[dep]==0) q.offer(dep);
+    void dfs(int node){
+        if(hasCycle) return;
+        
+        state[node]=1; // visiting 
+        for(int nei:graph.get(node)){
+            if(state[nei]==1){
+                //cycle detected
+                hasCycle=true;
+                return;
             }
+            if(state[nei]==0) dfs(nei);
         }
-
-        return processed==numCourses;
+        state[node]=2;
     }
 }
