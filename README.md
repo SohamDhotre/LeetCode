@@ -6,10 +6,10 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 ## 📊 Progress Statistics
 
-**Total Problems Solved:** 60
+**Total Problems Solved:** 61
 
 - 🟢 Easy: 20
-- 🟡 Medium: 35
+- 🟡 Medium: 36
 - 🔴 Hard: 5
 
 ## 📂 Solutions by Category
@@ -17,8 +17,8 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 ### Arrays (15)
 - Easy: 3 | Medium: 10 | Hard: 2
 
-### DFS (3)
-- Easy: 0 | Medium: 3 | Hard: 0
+### DFS (4)
+- Easy: 0 | Medium: 4 | Hard: 0
 
 ### Design (1)
 - Easy: 1 | Medium: 0 | Hard: 0
@@ -48,6 +48,7 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 | # | Problem | Difficulty | Category | Date |
 |---|---------|------------|----------|------|
+| 684 | [Redundant Connection](https://github.com/SohamDhotre/LeetCode/tree/main/DFS/Medium/684.redundant-connection) | 🟡 Medium | DFS | 2026-02-06 |
 | 207 | [Course Schedule](https://github.com/SohamDhotre/LeetCode/tree/main/DFS/Medium/207.course-schedule) | 🟡 Medium | DFS | 2026-02-06 |
 | 1791 | [Find Center of Star Graph](https://github.com/SohamDhotre/LeetCode/tree/main/Graphs/Easy/1791.find-center-of-star-graph) | 🟢 Easy | Graphs | 2026-02-05 |
 | 547 | [Number of Provinces](https://github.com/SohamDhotre/LeetCode/tree/main/DFS/Medium/547.number-of-provinces) | 🟡 Medium | DFS | 2026-02-05 |
@@ -57,7 +58,6 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 | 295 | [Find Median from Data Stream](https://github.com/SohamDhotre/LeetCode/tree/main/Two%20Pointers/Hard/295.find-median-from-data-stream) | 🔴 Hard | Two Pointers | 2026-02-02 |
 | 347 | [Top K Frequent Elements](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Medium/347.top-k-frequent-elements) | 🟡 Medium | Arrays | 2026-02-02 |
 | 973 | [K Closest Points to Origin](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Medium/973.k-closest-points-to-origin) | 🟡 Medium | Arrays | 2026-02-02 |
-| 23 | [Merge k Sorted Lists](https://github.com/SohamDhotre/LeetCode/tree/main/Linked%20List/Hard/23.merge-k-sorted-lists) | 🔴 Hard | Linked List | 2026-02-02 |
 
 ---
 
