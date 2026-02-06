@@ -48,6 +48,7 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 
 | # | Problem | Difficulty | Category | Date |
 |---|---------|------------|----------|------|
+| 207 | [Course Schedule](https://github.com/SohamDhotre/LeetCode/tree/main/DFS/Medium/207.course-schedule) | 🟡 Medium | DFS | 2026-02-06 |
 | 1791 | [Find Center of Star Graph](https://github.com/SohamDhotre/LeetCode/tree/main/Graphs/Easy/1791.find-center-of-star-graph) | 🟢 Easy | Graphs | 2026-02-05 |
 | 547 | [Number of Provinces](https://github.com/SohamDhotre/LeetCode/tree/main/DFS/Medium/547.number-of-provinces) | 🟡 Medium | DFS | 2026-02-05 |
 | 133 | [Clone Graph](https://github.com/SohamDhotre/LeetCode/tree/main/Hash%20Table/Medium/133.clone-graph) | 🟡 Medium | Hash Table | 2026-02-04 |
@@ -57,7 +58,6 @@ A collection of my LeetCode solutions, automatically synced from LeetCode.
 | 347 | [Top K Frequent Elements](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Medium/347.top-k-frequent-elements) | 🟡 Medium | Arrays | 2026-02-02 |
 | 973 | [K Closest Points to Origin](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Medium/973.k-closest-points-to-origin) | 🟡 Medium | Arrays | 2026-02-02 |
 | 23 | [Merge k Sorted Lists](https://github.com/SohamDhotre/LeetCode/tree/main/Linked%20List/Hard/23.merge-k-sorted-lists) | 🔴 Hard | Linked List | 2026-02-02 |
-| 198 | [House Robber](https://github.com/SohamDhotre/LeetCode/tree/main/Arrays/Medium/198.house-robber) | 🟡 Medium | Arrays | 2026-01-30 |
 
 ---
 

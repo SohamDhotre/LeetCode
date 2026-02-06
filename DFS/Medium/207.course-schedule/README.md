@@ -1,7 +1,7 @@
 # 207. Course Schedule
 
 **Difficulty:** Medium  
-**Topics:** Depth-First Search, Breadth-First Search, Graph, Topological Sort  
+**Topics:** Depth-First Search, Breadth-First Search, Graph Theory, Topological Sort  
 **Language:** java
 
 ## Problem Link
